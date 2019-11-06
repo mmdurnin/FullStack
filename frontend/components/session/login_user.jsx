@@ -7,6 +7,7 @@ class LoginUser extends React.Component{
         this.state = this.props.user
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.demoUserLogin = this.demoUserLogin.bind(this)
     }
 
     update(field) {
@@ -19,6 +20,15 @@ class LoginUser extends React.Component{
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.login(user).then(this.props.closeModal)
+    }
+
+    demoUserLogin(e) {
+        e.preventDefault();
+        const demoUser = { 
+                email: "demo@user.com", 
+                password: "demoPassword123"
+        };
+        this.props.login(demoUser).then(this.props.closeModal);
     }
 
     render(){
@@ -58,8 +68,10 @@ class LoginUser extends React.Component{
 
                     <br/><br/>
 
-                    <input className="session-form-submit" type="submit" value="Login" className="submit-form"/>
-                    
+                    <input className="session-form-submit" type="submit" value="Login"/>
+                    <br/><br/>
+                    <button className="session-form-demo" onClick={this.demoUserLogin}>Login as Demo User</button>
+
                     <h5 className="form-switch">New to TableFor2? {this.props.otherForm}</h5>
                 </form>
             </div>

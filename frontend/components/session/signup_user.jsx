@@ -7,6 +7,7 @@ class SignupUser extends React.Component{
         this.state=this.props.user
         
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.demoUserLogin = this.demoUserLogin.bind(this)
     }
 
     update(field){
@@ -21,6 +22,15 @@ class SignupUser extends React.Component{
         this.props.signup(user).then(this.props.closeModal);
     }
 
+    demoUserLogin(e) {
+        e.preventDefault();
+        const demoUser = { 
+                email: "demo@user.com", 
+                password: "demoPassword123"
+        };
+        this.props.login(demoUser).then(this.props.closeModal);
+    }
+
     render(){
         return(
             <div className="form-front">
@@ -33,7 +43,7 @@ class SignupUser extends React.Component{
                     </ul>
                 <form className="session-form-body" onSubmit={this.handleSubmit}>
                     <h1 className="session-form-title">Welcome to TableFor2!</h1>
-                    
+
                     <div className="session-form-input-signup">
                         <label>
                             <input
@@ -74,6 +84,9 @@ class SignupUser extends React.Component{
                     <br/><br/>
                     
                     <input className="session-form-submit" type="submit" value="Create Account"/>
+                    <br/><br/>
+                    <button className="session-form-demo" onClick={this.demoUserLogin}>Login as Demo User</button>
+
                     <h5 className="form-switch">Already have an account? {this.props.otherForm}</h5>
                 </form>
             </div>

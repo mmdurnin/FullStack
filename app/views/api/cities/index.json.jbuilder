@@ -1,0 +1,1 @@
+json.set! @city.id, :name, :state

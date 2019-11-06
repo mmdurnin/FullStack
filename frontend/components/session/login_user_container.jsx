@@ -16,7 +16,7 @@ const mdp = dispatch => {
     return {
         login: (user) => dispatch(login(user)),
         otherForm: (
-            <button classname="button-modal-signup" onClick={() => dispatch(openModal('signup'))}>
+            <button className="button-modal-signup" onClick={() => dispatch(openModal('signup'))}>
                 Create an account
             </button>
         ),

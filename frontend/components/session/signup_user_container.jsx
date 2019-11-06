@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
+import { signup, login } from '../../actions/session_actions';
 import { closeModal, openModal } from '../../actions/modal_actions';
 import SignupUser from './signup_user';
 
@@ -22,7 +22,8 @@ const mdp = dispatch => {
                 Log In
             </button>
         ),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        login: (user) => dispatch(login(user))
     };
 };
 
