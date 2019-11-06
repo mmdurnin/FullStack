@@ -1,0 +1,77 @@
+.modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+ 
+.modal-child {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-front {
+  background-color: rgb(255,255,255);
+  margin-top: 30%;
+  height: 500px;
+  width: 400px;
+}
+
+form.session-form-body {
+  padding: 5%;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+}
+
+.session-form-title {
+  font-family: 'Varela Round', sans-serif;
+}
+
+//this should really closely match .session-form-input-signup!(below)
+.session-form-input-login {
+  background-color: rgb(232,240,254);
+  box-shadow: none;
+  border: none;
+  padding: 0%; 
+  display: inline-block;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.session-form-input-login input {
+  background-color: rgb(232,240,254); //this matches .session-form-input
+  margin: 0%;
+  padding-left: 2%;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid rgb(204,211,222);
+  box-shadow: none;
+}
+
+//this should really closely match .session-form-input-login!(above)
+.session-form-input-signup {
+  box-shadow: none;
+  border: none;
+  padding: 0%; 
+  display: inline-block;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.session-form-input-signup input {
+  margin: 0%;
+  padding-left: 2%;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid rgb(204,211,222);
+  box-shadow: none;
+}
+.session-form-submit {
+  text-align: center;
+}
