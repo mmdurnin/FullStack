@@ -1,5 +1,6 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
+import { clearErrors } from '../../actions/session_actions';
 import LoginUser from '../session/login_user_container';
 import SignupUser from '../session/signup_user_container';
 import { connect } from 'react-redux';
@@ -8,7 +9,6 @@ function Modal({modal, closeModal}) {
     if (!modal) {
         return null
     }
-
 
     let component;
     switch (modal) {
@@ -37,7 +37,10 @@ const msp = (state) => ({
 })
 
 const mdp = dispatch => ({
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => {  
+        dispatch(closeModal())
+        dispatch(clearErrors())
+    }
 })
 
 export default connect(msp, mdp)(Modal);

@@ -1,29 +1,32 @@
 import React from 'react';
+import FeaturedCitiesIndex from './featured_cities_index';
 
 class Home extends React.Component{
     constructor(props){
         super(props)
-        console.log(this.props)
     }
 
     componentDidMount(){
         this.props.fetchCities();
-        this.props.fetchRestaurants(1);
+        this.props.fetchRestaurants(this.props.currentCity);
     }
 
+    // featuredCities(){
+    //     let featuredCities = [];
+    //     this.props.cities.map((city) => {
+    //         if (city.id < 7 && city.id > 0) featuredCities.push(city)
+    //     })
+    //     return featuredCities
+    // }
+
     render(){
-        if (!this.props.cities) return null;
+        if (this.featuredCities === []) return null;
         return(
-            <ul>
-                {
-                    this.props.cities.map((el, id) => {
-                        return <li>
-                            {el.name }
-                            <br/>
-                        </li>
-                    })
-                }
-            </ul>
+            <div>
+                {/* <SearchBarContainer />
+                <FeaturedRestaurantsIndex restaurants={this.props.restaurants} /> */}
+                <FeaturedCitiesIndex cities={this.props.cities} />
+            </div>
         )
     }
 }

@@ -5,7 +5,8 @@ import { fetchRestaurant, fetchRestaurants } from '../../actions/restaurant_acti
 
 const msp = (state) => ({
     restaurants: Object.values(state.entities.restaurants),
-    cities: Object.values(state.entities.cities)
+    cities: Object.values(state.entities.cities),
+    currentCity: state.currentCity
 
 })
 
@@ -14,6 +15,5 @@ const mdp = dispatch => ({
     fetchRestaurants: (cityId) => dispatch(fetchRestaurants(cityId)),
     fetchRestaurant: (restaurantId) => dispatch(fetchRestaurant(restaurantId))    
 })
-
 
 export default connect(msp, mdp)(Home)

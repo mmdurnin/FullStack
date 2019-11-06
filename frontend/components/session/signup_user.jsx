@@ -34,17 +34,10 @@ class SignupUser extends React.Component{
     render(){
         return(
             <div className="form-front">
-                    <ul>
-                        {
-                            this.props.errors.map((error, i) => {
-                                return <li key={i}>{error}</li>
-                            })
-                        }
-                    </ul>
                 <form className="session-form-body" onSubmit={this.handleSubmit}>
                     <h1 className="session-form-title">Welcome to TableFor2!</h1>
 
-                    <div className="session-form-input-signup">
+                    <div className="session-form-input">
                         <label>
                             <input
                             placeholder="What name do you go by? *" 
@@ -57,7 +50,7 @@ class SignupUser extends React.Component{
 
                     <br/><br/>
 
-                    <div className="session-form-input-signup">
+                    <div className="session-form-input">
                         <label>
                             <input
                             placeholder="Email Address *" 
@@ -70,7 +63,7 @@ class SignupUser extends React.Component{
 
                     <br/><br/>
 
-                    <div className="session-form-input-signup">
+                    <div className="session-form-input">
                         <label>
                             <input 
                             placeholder="Password *"
@@ -81,10 +74,20 @@ class SignupUser extends React.Component{
                         </label>
                     </div>
 
-                    <br/><br/>
+                    <br/>
+                        <ul className="session-errors">
+                            {
+                                this.props.errors.map((error, i) => {
+                                    return <li key={i}>{error}</li>
+                                })
+                            }
+                        </ul>
+                    <br/>
                     
                     <input className="session-form-submit" type="submit" value="Create Account"/>
-                    <br/><br/>
+                    <br />
+                    <div className="session-form-subtext">Don't want to complete the form?</div>
+                    <br/>
                     <button className="session-form-demo" onClick={this.demoUserLogin}>Login as Demo User</button>
 
                     <h5 className="form-switch">Already have an account? {this.props.otherForm}</h5>
