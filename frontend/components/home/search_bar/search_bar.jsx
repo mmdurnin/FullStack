@@ -21,7 +21,8 @@ class SearchBar extends React.Component{
             images.push(<img key={i} src={window.searchbarImages[i]} />)
         }
         return(
-            <div id="purple-screen">
+            <div>
+                <div id="purple-screen" />
                 <div id="search-bar">
                     {images}
                 </div>
