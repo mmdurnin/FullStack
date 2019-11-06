@@ -1,5 +1,6 @@
 import React from 'react';
 import FeaturedCitiesIndex from './featured_cities_index';
+import SearchBarContainer from './search_bar/search_bar_container';
 
 class Home extends React.Component{
     constructor(props){
@@ -23,8 +24,8 @@ class Home extends React.Component{
         if (this.featuredCities === []) return null;
         return(
             <div>
-                {/* <SearchBarContainer />
-                <FeaturedRestaurantsIndex restaurants={this.props.restaurants} /> */}
+                <SearchBarContainer />
+                {/* <FeaturedRestaurantsIndex restaurants={this.props.restaurants} /> */}
                 <FeaturedCitiesIndex cities={this.props.cities} />
             </div>
         )

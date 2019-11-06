@@ -6,6 +6,15 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', "https://fonts.googleapis.com/css?family=Source+Sans+Pro|Varela+Round&display=swap", media: 'all' %>
+
+    <script type="text/javascript">
+      window.searchbarImages = []
+        window.searchbarImages.push("<%= image_url('img_dining_0.jpg') %>")
+        window.searchbarImages.push("<%= image_url('img_dining_1.jpg') %>")
+        window.searchbarImages.push("<%= image_url('img_dining_2.jpg') %>")
+        window.searchbarImages.push("<%= image_url('img_dining_3.jpg') %>")
+    </script>
+
     <%= javascript_include_tag 'application' %>
   </head>
 
