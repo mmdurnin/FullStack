@@ -1,1 +1,3 @@
-json.set! @restaurant.id do :name, :summary, :hours, :dress_code, :address, :neighborhood, :phone_number, :website, :city_id, :pricing, :city_id
+json.set! @restaurant.id do
+    json.partial! '/api/restaurants/restaurant', restaurant: @restaurant
+end

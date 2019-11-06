@@ -1,6 +1,6 @@
 class Restaurant < ApplicationRecord
     validates :name, :city_id, :pricing, presence: true
-    validates :pricing, { greater_than: 0, less_than_or_equal_to: 5 }
+    validates :pricing, numericality: { greater_than: 0, less_than_or_equal_to: 5 }
 
     belongs_to :city,
         primary_key: :id,

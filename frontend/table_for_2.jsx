@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import Root from './components/root';
 
+import { fetchCities } from './actions/city_actions';
+import { fetchRestaurant, fetchRestaurants } from './actions/restaurant_actions';
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -28,6 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     window.getState = store.getState;
+    window.fetchCities = ()=> store.dispatch(fetchCities);
+    window.fetchRestaurant = (restaurantId) => store.dispatch(fetchRestaurant(restaurantId));
+    window.fetchRestaurants = store.dispatch(fetchRestaurants);
     
     ReactDOM.render(<Root store={store} />, rootEl)
 });

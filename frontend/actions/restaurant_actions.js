@@ -13,12 +13,12 @@ const receiveRestaurants = (restaurants) => ({
     restaurants
 })
 
-export const fetchRestaurant = (restaurant) => dispatch => {
-    return RestaurantAPIUtil.fetchRestaurant(restaurant)
+export const fetchRestaurant = (restaurantId) => dispatch => {
+    return RestaurantAPIUtil.fetchRestaurant(restaurantId)
         .then((restaurant) => dispatch(receiveRestaurant(restaurant)))
 }
 
-export const fetchRestaurants = () => dispatch => {
-    return RestaurantAPIUtil.fetchRestaurants()
+export const fetchRestaurants = (cityId) => dispatch => {
+    return RestaurantAPIUtil.fetchRestaurants(cityId)
         .then((restaurants) => dispatch(receiveRestaurants(restaurants)))
 }
