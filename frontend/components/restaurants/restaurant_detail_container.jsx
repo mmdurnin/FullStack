@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import RestaurantDetail from './restaurant_detail';
-import fetchRestaurants from '../../actions/restaurant_actions';
+import { fetchRestaurant } from '../../actions/restaurant_actions';
 
 const msp = (state, ownProps) => ({
-    restaurant: state.restaurants[ownProps.match.params.restaurantId]
+    restaurant: state.entities.restaurants[ownProps.match.params.restaurantId]
 })
 
 const mdp = dispatch => ({
-    fetchRestaurants: () => dispatch(fetchRestaurants())
+    fetchRestaurant: (restaurantId) => dispatch(fetchRestaurant(restaurantId))
 })
 
 export default connect(msp, mdp)(RestaurantDetail);

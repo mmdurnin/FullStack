@@ -3,10 +3,16 @@ import Home from './home';
 import { fetchCities } from '../../actions/city_actions';
 import { fetchRestaurant, fetchFeaturedRestaurants } from '../../actions/restaurant_actions';
 
-const msp = (state) => ({
-    featuredRestaurants: Object.values(state.entities.restaurants),
-    cities: Object.values(state.entities.cities)
-})
+const msp = (state) => {
+    
+    let featuredRestaurants = Object.values(state.entities.restaurants);
+    let featuredCities = Object.values(state.entities.cities).slice(0, 8)
+
+    return {
+        featuredRestaurants: featuredRestaurants,
+        cities: featuredCities
+    }
+}
 
 const mdp = dispatch => ({
     fetchCities: () => dispatch(fetchCities()),

@@ -9,6 +9,7 @@ class FeaturedRestaurantsIndex extends React.Component{
     render(){
         return(
             <div>
+                <h3 className="home-icon-title">Featured Restaurants in San Francisco</h3>
                 <ul>
                     {
                         this.props.restaurants.map((el, i) => {
