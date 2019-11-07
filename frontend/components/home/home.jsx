@@ -15,8 +15,6 @@ class Home extends React.Component{
     }
 
     render(){
-        if (this.featuredCities === []) return null;
-        if (this.featuredRestaurants === []) return null;
         console.log(this.props.featuredRestaurants);
         return(
             <div>
