@@ -7,7 +7,7 @@ import { fetchRestaurants } from '../../actions/restaurant_actions';
 
 const msp = (state, ownProps) => {
 
-    const values = queryString.parse(ownProps.location.search)
+    let values = queryString.parse(ownProps.location.search)
     return {
         cityId: values.city_id,
         restaurants: Object.values(state.entities.restaurants)

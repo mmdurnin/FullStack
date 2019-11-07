@@ -14,7 +14,6 @@ class SearchBar extends React.Component{
         }
     }
 
-
     render(){
         const images = [];
         for(let i = 0; i < 4; i++) {

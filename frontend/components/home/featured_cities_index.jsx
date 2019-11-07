@@ -10,13 +10,16 @@ class FeaturedCitiesIndex extends React.Component {
         return(
 
             <div>
-                <ul>
-                    {
-                        this.props.cities.map((el, id) => {
-                            return <CityIndexItem key={id} city={el} />
-                        })
-                    }
-                </ul>
+                <h3 className="home-icon-title">Featured Cities</h3>
+                <div className="featured-cities-parent-container">
+                    <ul className="featured-cities-child-container">
+                        {
+                            this.props.cities.map((el, id) => {
+                                return <CityIndexItem key={id} image_id={id} city={el} />
+                            })
+                        }
+                    </ul>
+                </div>
             </div>
         )
     }
