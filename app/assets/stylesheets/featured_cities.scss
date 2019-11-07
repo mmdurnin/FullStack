@@ -22,28 +22,34 @@
 }
 
 .city-icon-parent-container {
+    box-sizing: border-box;
+    position: relative;
     padding: 0%;
-    // position: relative;
     width: 300px;
     height: 150px;
+}
+
+.city-icon-child-container {
+    position: relative;
 }
 
 .city-image-icon {
     overflow: hidden;
     padding: 0%;
     margin: 0%;
-    width: inherit;
-    height: inherit;
-    // background-position: cover;
+    width: 300px;
+    height: 150px;
 }
 
 .city-image-icon-name {
-    text-align: center;
     position: absolute;
-    z-index: 100;
-    padding: 0px;
-    top: 0;
-    bottom: 0;
-    // vertical-align: middle;
+    text-align: center;
+
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    
 }
 

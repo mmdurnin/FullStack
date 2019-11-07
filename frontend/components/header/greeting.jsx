@@ -9,7 +9,7 @@ class Greeting extends React.Component {
         return(
             <div className="greeting">
                 {!!(this.props.loggedIn) ? (
-                    <div>
+                    <div className="greeting-loggedin-session-nav">
                         <h1>Hi, {this.props.user.name}</h1>
                         <button onClick={()=> this.props.logout()}>Log Out</button>
                     </div>
