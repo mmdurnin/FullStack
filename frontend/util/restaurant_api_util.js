@@ -11,3 +11,10 @@ export const fetchRestaurants = (cityId) => {
         method: 'GET'
     })
 }
+
+export const fetchFeaturedRestaurants = () => {
+    return $.ajax({
+        url: `/api/restaurants/featured`,
+        method: 'GET'
+    })
+}

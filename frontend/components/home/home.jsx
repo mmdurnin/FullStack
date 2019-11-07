@@ -1,6 +1,8 @@
 import React from 'react';
-import FeaturedCitiesIndex from './featured_cities_index';
 import SearchBarContainer from './search_bar/search_bar_container';
+import FeaturedCitiesIndex from './featured_cities_index';
+import FeaturedRestaurantsIndex from './featured_restaurants_index';
+
 
 class Home extends React.Component{
     constructor(props){
@@ -9,23 +11,17 @@ class Home extends React.Component{
 
     componentDidMount(){
         this.props.fetchCities();
-        this.props.fetchRestaurants(this.props.currentCity);
+        this.props.fetchFeaturedRestaurants();
     }
-
-    // featuredCities(){
-    //     let featuredCities = [];
-    //     this.props.cities.map((city) => {
-    //         if (city.id < 7 && city.id > 0) featuredCities.push(city)
-    //     })
-    //     return featuredCities
-    // }
 
     render(){
         if (this.featuredCities === []) return null;
+        if (this.featuredRestaurants === []) return null;
+        console.log(this.props.featuredRestaurants);
         return(
             <div>
                 <SearchBarContainer />
-                {/* <FeaturedRestaurantsIndex restaurants={this.props.restaurants} /> */}
+                <FeaturedRestaurantsIndex restaurants={this.props.featuredRestaurants} />
                 <FeaturedCitiesIndex cities={this.props.cities} />
             </div>
         )

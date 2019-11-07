@@ -22,3 +22,8 @@ export const fetchRestaurants = (cityId) => dispatch => {
     return RestaurantAPIUtil.fetchRestaurants(cityId)
         .then((restaurants) => dispatch(receiveRestaurants(restaurants)))
 }
+
+export const fetchFeaturedRestaurants = () => dispatch => {
+    return RestaurantAPIUtil.fetchFeaturedRestaurants()
+        .then((restaurants) => dispatch(receiveRestaurants(restaurants)))
+}
