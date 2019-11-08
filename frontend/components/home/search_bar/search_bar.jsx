@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchFormContainer from './search_form_container';
 
 class SearchBar extends React.Component{
     constructor(props){
@@ -20,11 +21,12 @@ class SearchBar extends React.Component{
             images.push(<img key={i} src={window.searchbarImages[i]} />)
         }
         return(
-            <div>
+            <div className="search-bar-parent">
                 <div id="purple-screen" />
                 <div id="search-bar">
                     {images}
                 </div>
+                <div className="search-form-grandparent"><SearchFormContainer /></div>
             </div>
         )
     }
