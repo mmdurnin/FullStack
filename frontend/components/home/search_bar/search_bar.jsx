@@ -17,7 +17,7 @@ class SearchBar extends React.Component{
 
     render(){
         const images = [];
-        for(let i = 0; i < 4; i++) {
+        for(let i = 0; i < 5; i++) {
             images.push(<img key={i} src={window.searchbarImages[i]} />)
         }
         return(
