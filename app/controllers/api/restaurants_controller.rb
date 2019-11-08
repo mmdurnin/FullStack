@@ -5,9 +5,9 @@ class Api::RestaurantsController < ApplicationController
     end
 
     def show
-        if params(:id)
-            @restaurant = Restaurant.find_by(id: params[:id])
-        else 
+        # if params(:id)
+        @restaurant = Restaurant.find_by(id: params[:id])
+        # else 
     end
 
     def featured
