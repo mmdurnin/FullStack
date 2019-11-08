@@ -1,3 +1,7 @@
+.search-bar-parent {
+  position: relative;
+}
+
 //search bar background
 #purple-screen {
   position: absolute;
@@ -47,20 +51,74 @@
 
   //search form
   .search-form-grandparent {
-    position: absolute;
     display: block;
+    position: absolute;
     z-index: 13;
     top: 50%;
     left: 50%;
     width: 100%;
-    text-align: center;
     transform: translate(-50%, -50%);
+    text-align: center;
   }
 
   .search-form-parent {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    border: 0%
+    border: 0%;
+    margin: 0%;
+    padding: 0%;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
+
+ .search-bar-smooshed {
+   display: flex;
+   flex-direction: row;
+   align-items: stretch;
+   justify-content: center;
+   margin-right: 10px;
+
+   height: 100%;
+   border-radius: 5px;
+   background-color: rgb(255,255,255);
+ }
+
+ .search-bar-island {
+   margin-left: 10px;
+   margin-right: 10px;
+   height: 100%;
+   width: 300px;
+   border-radius: 5px;
+   background-color: rgb(255,255,255);
+ }
+
+ .submit-search {
+  margin-left: 10px;
+  height: 100%;
+  width: 150px;
+  border: none;
+
+  border-radius: 5px;
+  background-color: rgb(218,55,66);
+  color: rgb(255,255,255);
+ }
+
+ .search-bar-input {
+   margin: 0%;
+   padding: 0%;
+   height: 100%;
+   width: inherit;
+   border-top: none;
+   border-bottom: none;
+   border-left: 1px solid rgb(204,211,222);
+   border-right: 1px solid rgb(204,211,222);
+ }
+
+
   

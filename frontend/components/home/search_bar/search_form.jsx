@@ -47,38 +47,44 @@ class SearchForm extends React.Component{
 
     render(){
        return(
-           <div className="search-form-parent">
-               <form onSubmit={this.handleSubmit}>
-                   <label className="search-city">
-                       <input 
-                       placeholder="Select city"
-                       type="text"
-                       />
-                   </label>
-
-                   <label className="search-date">
+           <div >
+               <form className="search-form-parent" onSubmit={this.handleSubmit}>
+                   <div className="search-bar-smooshed">
+                    <label >
                         <input 
+                        className="search-bar-input"
+                        placeholder="Select city"
+                        type="text"
+                        />
+                    </label>
+
+                    <label >
+                        <input 
+                        className="search-bar-input"
                         placeholder="Select date and time"
                         type="text"
                         />
-                   </label>
+                    </label>
 
-                   <label className="search-num-people">
+                    <label >
+                        <input 
+                        className="search-bar-input"
+                        placeholder="Number of people"
+                        type="text"
+                        />
+                    </label>
+                   </div>
+
+                   <label className="search-bar-island">
                        <input 
-                       placeholder="Number of people"
-                       type="text"
-                       />
-                   </label>
-
-                   <br/>
-
-                   <label className="search-restaurant">
-                       <input 
+                       className="search-bar-input"
                        placeholder="Search for a restaurant"
                        type="text"
                     //    onChange={this.update("restaurant")}
                        />
                    </label>
+
+                   <input className="submit-search" type="submit" value="Find a table!"/>
                </form>
            </div>
        ) 
