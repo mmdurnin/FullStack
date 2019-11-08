@@ -109,7 +109,7 @@
   color: rgb(255,255,255);
  }
 
- .search-bar-input {
+ .search-bar-input{
    margin: 0%;
    padding: 0%;
    height: 100%;
@@ -121,4 +121,35 @@
  }
 
 
-  
+ //form dropdowns
+ .Dropdown-menu {
+   background-color: rgb(255,255,255);
+   overflow: auto;
+   border-radius: 5%;
+ }
+
+ .search-bar-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  // padding: 3px;
+  border-left: 1px solid rgb(204,211,222);
+  border-right: 1px solid rgb(204,211,222);
+  color: rgb(117,117,117);
+ }
+
+ .search-bar-dropdown > * {
+   margin: 2px;
+   border: 2px;
+
+ }
+
+.search-bar-dropdown:hover {
+  cursor: pointer;
+}
+
+.Dropdown-option:hover {
+  background-color: rgba(60, 4, 150, .4);
+  color: black;
+}

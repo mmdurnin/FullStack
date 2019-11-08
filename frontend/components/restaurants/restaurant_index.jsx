@@ -4,6 +4,7 @@ import React from 'react';
 class RestaurantIndex extends React.Component{
     constructor(props){
         super(props)
+        console.log(this.props)
     }
 
     componentDidMount(){

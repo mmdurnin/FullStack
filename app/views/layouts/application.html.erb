@@ -8,6 +8,10 @@
     <%= stylesheet_link_tag    'application', "https://fonts.googleapis.com/css?family=Source+Sans+Pro|Varela+Round&display=swap", media: 'all' %>
 
     <script type="text/javascript">
+      window.logo = "<%= image_url('logo.jpg')%>"
+    </script>
+    
+    <script type="text/javascript">
       window.searchbarImages = []
 
       window.searchbarImages.push("<%= image_url('img_dining_0.jpg') %>")

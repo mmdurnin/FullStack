@@ -8,7 +8,7 @@ import { fetchCities } from '../../../actions/city_actions';
 
 const msp = (state) => ({
     restaurants: Object.values(state.entities.restaurants),
-    cities: state.entities.cities
+    cities: Object.values(state.entities.cities)
 })
 
 

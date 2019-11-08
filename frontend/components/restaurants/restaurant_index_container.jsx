@@ -10,7 +10,11 @@ const msp = (state, ownProps) => {
     let values = queryString.parse(ownProps.location.search)
     return {
         cityId: values.city_id,
-        restaurants: Object.values(state.entities.restaurants)
+        time: values.time,
+        date: values.date,
+        guests: values.guests,
+        restaurant: values.restaurant,
+        restaurants: Object.values(state.entities.restaurants),
     }
 }
 

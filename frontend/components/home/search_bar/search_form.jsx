@@ -1,4 +1,6 @@
 import React from 'react';
+import Dropdown from 'react-dropdown'
+import { Link } from 'react-router-dom'
 
 class SearchForm extends React.Component{
     constructor(props){
@@ -6,11 +8,13 @@ class SearchForm extends React.Component{
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.state={
-            city: "San Francisco",
+            city: "",
             date: "",
-            numPeople: 0,
+            time: "",
+            numPeople: "",
             restaurant: ""
         }
+
     }
 
     componentDidMount(){
@@ -24,71 +28,102 @@ class SearchForm extends React.Component{
         }
     }
 
-    // getRestaurantByName(name){
-    //     if (this.props.restaurants === []) return null;
-
-    //     const names = []
-    //     this.props.restaurants.map((el) => {
-    //         names.push(el.name)
-    //     })
-
-    //     if (names.includes(name)) {
-    //         return 
-    //     }
-    // }
+    updateDropDown(field) {
+        return e => {
+            this.setState({ [field]: e.value})
+        }
+    }
 
 
-    handleSubmit() {
-        // this.props.fetchRestaurants(this.state.city.id)
-        //     .then(this.props.history.push(`/restaurants/${this.props.restaurant.id}`))
-        console.log("this is surprisingly working, here are the props")    
-        console.log(this.props)
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.history.push(`/restaurants?city_id=${this.state.city}&time=${this.state.time}&guests=${this.state.numPeople}&date=${this.state.date}&restaurant=${this.state.restaurant}`)
     }
 
     render(){
-       return(
-           <div >
-               <form className="search-form-parent" onSubmit={this.handleSubmit}>
-                   <div className="search-bar-smooshed">
-                    <label >
+
+        // city dropdown options
+        const cityOptions = [];
+        this.props.cities.map((el) => {
+            cityOptions.push({value: el.id, label: el.name})
+        });
+        
+        //numGuest dropdown options
+        const numGuestOptions = [({value: 1, label: "1 guest"})];
+        for (let i = 2; i < 13; i++) {
+            numGuestOptions.push({value: i, label: `${i} guests`})
+        };
+
+        //time drowdown options
+        const timeOptions = ["12:00 PM", "12:30PM"];
+        let time;
+        for (let i = 1; i < 12; i++) {
+            for (let j = 0; j < 2; j++) {
+                time = "";
+                time = time.concat(`${i}`)
+
+                if (j === 0) {
+                    time = time.concat(":00 PM")
+                } else {
+                    time = time.concat(":30 PM")
+                }
+                
+                timeOptions.push(time)
+            }
+        }
+
+        return(
+            <div >
+                <form className="search-form-parent" onSubmit={this.handleSubmit}>
+                    <div className="search-bar-smooshed">
+                        
+                        <Dropdown 
+                            className="search-bar-dropdown"
+                            options={cityOptions}
+                            value={cityOptions[this.state.city - 1]}
+                            onChange={this.updateDropDown("city")} 
+                            placeholder="Select a city" 
+                        />
+
+                        <label >
+                            <input 
+                            className="search-bar-input"
+                            placeholder="Select date and time"
+                            type="text"
+                            />
+                        </label>
+
+                        <Dropdown 
+                            className="search-bar-dropdown"
+                            options={timeOptions}
+                            value={timeOptions[this.state.time - 1]}
+                            onChange={this.updateDropDown("time")}  
+                            placeholder="Time"
+                        />
+
+                        <Dropdown 
+                            className="search-bar-dropdown"
+                            options={numGuestOptions}
+                            value={numGuestOptions[this.state.numPeople - 1]}
+                            onChange={this.updateDropDown("numPeople")} 
+                            placeholder="Table for... "  
+                        />
+                    </div>
+
+                    <label className="search-bar-island">
                         <input 
                         className="search-bar-input"
-                        placeholder="Select city"
+                        placeholder="Search for a restaurant *"
                         type="text"
+                        //    onChange={this.update("restaurant")}
                         />
                     </label>
 
-                    <label >
-                        <input 
-                        className="search-bar-input"
-                        placeholder="Select date and time"
-                        type="text"
-                        />
-                    </label>
-
-                    <label >
-                        <input 
-                        className="search-bar-input"
-                        placeholder="Number of people"
-                        type="text"
-                        />
-                    </label>
-                   </div>
-
-                   <label className="search-bar-island">
-                       <input 
-                       className="search-bar-input"
-                       placeholder="Search for a restaurant"
-                       type="text"
-                    //    onChange={this.update("restaurant")}
-                       />
-                   </label>
-
-                   <input className="submit-search" type="submit" value="Find a table!"/>
-               </form>
-           </div>
-       ) 
+                    <input className="submit-search" type="submit" value="Find a table!"/>
+                </form>
+            </div>
+        ) 
+        }
     }
-}
 
-export default SearchForm;
+    export default SearchForm;

@@ -15,7 +15,9 @@ class Home extends React.Component{
     }
 
     render(){
-        console.log(this.props.featuredRestaurants);
+        if (this.props.cities === []) return null;
+        if (this.props.featuredRestaurants === []) return null;
+        
         return(
             <div>
                 <SearchBarContainer />
