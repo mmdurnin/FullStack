@@ -1,1 +1,12 @@
-json.extract! restaurant, :id, :name, :summary, :hours, :dress_code, :address, :neighborhood, :phone_number, :website, :city_id, :pricing, :city_id
+json.id restaurant.id 
+json.name restaurant.name 
+json.summary restaurant.summary 
+json.hours restaurant.hours 
+json.dress_code restaurant.dress_code 
+json.address restaurant.address
+json.neighborhood restaurant.neighborhood 
+json.phone_number restaurant.phone_number 
+json.website restaurant.website 
+json.city_id restaurant.city_id 
+json.pricing restaurant.pricing 
+json.image url_for(restaurant.image)

@@ -6,4 +6,6 @@ class Restaurant < ApplicationRecord
         primary_key: :id,
         foreign_key: :city_id,
         class_name: 'City'
+
+    has_one_attached :image
 end
