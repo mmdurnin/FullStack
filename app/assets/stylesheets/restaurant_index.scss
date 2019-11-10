@@ -9,11 +9,37 @@
 
 .restaurant-index-navbar-container {
     width: 200px;
+    margin-right: 3%;
 }
 
 .sticky-navbar {
     position: sticky;
     top: 0px;
+}
+
+.price-filter-container {
+    padding: .875rem 0;
+    border-bottom: 1px solid rgb(204, 211, 222);
+    display: flex;
+    flex-direction: column;
+}
+
+.price-buttons {
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+}
+
+.price-filter-container button {
+    text-align: center;
+    width: 50px;
+    height: 35px;
+}
+
+.cuisine-filter {
+    width: 100%;
+    padding: .875rem 0;
+    border-bottom: 1px solid rgb(204,211,222);
 }
 
 //make navbar move to top when window is resized:
