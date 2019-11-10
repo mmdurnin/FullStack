@@ -14,8 +14,10 @@
  *= header
  *= forms
  *= search_bar
+ *= featured_restaurants
  *= featured_cities
  *= restaurant_index
+ *= restaurant_show_page
  *= require_tree .
  *= require_self
  */

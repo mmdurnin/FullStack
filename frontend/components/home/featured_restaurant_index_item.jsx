@@ -8,8 +8,11 @@ class FeaturedRestaurantIndexItem extends React.Component{
 
     render(){
         return(
-            <div className="featured-restaurant-icon">
-                <Link to={`/restaurants/${this.props.restaurant.id}`}><img src={this.props.restaurant.image}/></Link>
+            <div className="featured-restaurant-item-container">
+                <div className="featured-restaurant-icon-parent">
+                    <Link className="featured-restaurant-icon-child" to={`/restaurants/${this.props.restaurant.id}`}><img src={this.props.restaurant.image}/></Link>
+                </div>
+                <h3>{this.props.restaurant.name}</h3>
             </div>
         )
     }

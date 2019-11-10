@@ -1,0 +1,35 @@
+.featured-restaurants-container {
+    width: 700px;
+    text-align: center;
+}
+
+.featured-restaurants-container > * { //the ul is the child so we hve to refer to the ul (> *)
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    margin: 20px;
+
+    height: 240px;
+    width: 100%;;
+}
+
+.featured-restaurant-item-container {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    flex: 0 0 auto;
+    overflow: hidden;
+}
+
+.featured-restaurant-icon-parent {
+
+}
+
+.featured-restaurant-icon-child {
+    height: auto;
+    width: inherit;
+}

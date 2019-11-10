@@ -6,7 +6,7 @@ import { fetchRestaurant, fetchFeaturedRestaurants } from '../../actions/restaur
 const msp = (state) => {
     
     let featuredRestaurants = Object.values(state.entities.restaurants);
-    let featuredCities = Object.values(state.entities.cities).slice(0, 8)
+    let featuredCities = Object.values(state.entities.cities).slice(0, 6)
 
     return {
         featuredRestaurants: featuredRestaurants,

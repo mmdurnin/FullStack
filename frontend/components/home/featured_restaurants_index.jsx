@@ -10,13 +10,15 @@ class FeaturedRestaurantsIndex extends React.Component{
         return(
             <div>
                 <h3 className="home-icon-title">Featured Restaurants in San Francisco</h3>
-                <ul>
-                    {
-                        this.props.restaurants.map((el, i) => {
-                            return <FeaturedRestaurantIndexItem key={i} restaurant={el} />
-                        })
-                    }
-                </ul>
+                <div className="featured-restaurants-container">
+                    <ul>
+                        {
+                            this.props.restaurants.map((el, i) => {
+                                return <FeaturedRestaurantIndexItem key={i} restaurant={el} />
+                            })
+                        }
+                    </ul>
+                </div>
             </div>
         )
     }
