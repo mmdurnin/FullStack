@@ -60,10 +60,13 @@ class RestaurantIndexItem extends React.Component{
                     <h4 className="index-item-overview-bookstat">Booked 0 times today</h4>
 
                     <div className="buttons-container">
-                        <button>5:00PM</button>
-                        <button>5:00PM</button>
-                        <button>5:00PM</button>
-                        <button>5:00PM</button>
+                        <div className="restaurant-index-reservation-buttons">
+                            <button>5:30PM</button>
+                            <button>6:00PM</button>
+                            <button>6:30PM</button>
+                            <button>7:00PM</button>
+                        </div> 
+                        <Link to={`/restaurants/${this.props.restaurant.id}`} ><h5 className="restaurant-item-button-subtext">More Options...</h5></Link>
                     </div>
                 </div>
             </div>

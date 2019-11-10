@@ -38,6 +38,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
 
     padding: .875rem 0;
     border-top: 1px solid rgb(204,211,222);
@@ -71,7 +72,11 @@
 
 .restaurantTitle {
     color: rgb(36,128,158);
-    // margin-bottom: 4px;
+    margin: 0px;
+}
+
+.index-restaurant-item-pricing {
+    margin: 0px;
 }
 
 .overview-rating {
@@ -110,4 +115,21 @@
 .buttons-container {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+    height: 50px;
+}
+
+.restaurant-index-reservation-buttons > * {
+    flex: 0 0 auto;
+    width: 100px;
+    height: 35px;
+    border-radius: 4px;
+    margin-left: 2px;
+    margin-right: 4px;
+    text-align: center;
+    background-color: rgb(218,55,66);
+    color: rgb(255,255,255);
 }
