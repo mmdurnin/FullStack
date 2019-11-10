@@ -1,0 +1,113 @@
+.restaurant-index-page-container {
+    margin-top: 25px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.restaurant-index-navbar-container {
+    width: 200px;
+}
+
+.sticky-navbar {
+    position: sticky;
+    top: 0px;
+}
+
+//make navbar move to top when window is resized:
+//(this isn't working:)
+// @media all and (max-width: 480px) {
+//     .restaurant-index-page-container { flex-direction: column; }
+//     .restaurant-item-image-container { display: none }
+// }
+
+.restaurant-list-container {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    width: 775px;
+}
+
+.restaurant-index-item-container {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+
+    padding: .875rem 0;
+    border-top: 1px solid rgb(204,211,222);
+    width: 100%;
+}
+
+.index-item-image-container {
+    height: 200px;
+    width: 200px;
+}
+
+.index-item-image-container * {
+    width: 100%;
+    height: 100%;
+    border-radius: 6%;
+}
+
+.index-item-overview-container {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+
+}
+
+.restaurant-item-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.restaurantTitle {
+    color: rgb(36,128,158);
+    // margin-bottom: 4px;
+}
+
+.overview-rating {
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-subtext {
+    padding-bottom: 7px;
+    font-size: 12px;
+    color: gray;
+}
+
+.last-star > * {
+    height: 25px;
+    width: 13px;
+}
+
+.rating-stars {
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+    width: 25px;
+}
+
+.index-item-neighborhood {
+    font-size: 12px;
+    color: gray;
+}
+
+
+.index-item-overview-bookstat {
+    font-size: 15px;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+}
