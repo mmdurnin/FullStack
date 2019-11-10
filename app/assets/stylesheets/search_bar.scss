@@ -2,7 +2,7 @@
   position: relative;
 }
 
-//search bar background
+//search bar background, home
 #purple-screen {
   position: absolute;
   margin: 1px;
@@ -46,6 +46,26 @@
   @keyframes fader {
     from { opacity: 1.0; }
     to   { opacity: 0.0; }
+  }
+
+  //search bar background, index
+  .index-search-bar-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0vw 0vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 25%;
+    height: 300px;
+    position: relative;
+  }
+
+  .index-search-bar-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
   }
 
 
@@ -107,6 +127,7 @@
   border-radius: 5px;
   background-color: rgb(218,55,66);
   color: rgb(255,255,255);
+  text-align: center;
  }
 
  .search-bar-input{
@@ -118,6 +139,8 @@
    border-bottom: none;
    border-left: 1px solid rgb(204,211,222);
    border-right: 1px solid rgb(204,211,222);
+
+   text-align: center;
  }
 
 

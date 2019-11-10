@@ -15,6 +15,7 @@
  *= forms
  *= search_bar
  *= featured_cities
+ *= restaurant_index
  *= require_tree .
  *= require_self
  */

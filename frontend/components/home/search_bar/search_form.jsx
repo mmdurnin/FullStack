@@ -1,6 +1,5 @@
 import React from 'react';
 import Dropdown from 'react-dropdown'
-import { Link } from 'react-router-dom'
 
 class SearchForm extends React.Component{
     constructor(props){
@@ -88,7 +87,7 @@ class SearchForm extends React.Component{
                         <label >
                             <input 
                             className="search-bar-input"
-                            placeholder="Select date and time"
+                            placeholder="Select date"
                             type="text"
                             />
                         </label>

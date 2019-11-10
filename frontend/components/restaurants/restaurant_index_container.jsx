@@ -8,6 +8,7 @@ import { fetchRestaurants } from '../../actions/restaurant_actions';
 const msp = (state, ownProps) => {
 
     let values = queryString.parse(ownProps.location.search)
+    
     return {
         cityId: values.city_id,
         time: values.time,
