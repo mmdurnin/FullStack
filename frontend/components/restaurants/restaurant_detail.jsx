@@ -1,6 +1,7 @@
 import React from 'react';
-import ReservationFrom from '../reservations/reservation_form';
+import ReservationForm from '../reservations/reservation_form';
 import RestaurantOverview from './restaurant_overview';
+import RestaurantShowNav from './restaurant_show_nav';
 
 class RestaurantDetail extends React.Component{
     constructor(props){
@@ -61,7 +62,7 @@ class RestaurantDetail extends React.Component{
                             </div>
                         </div>
 
-                        <div className="restaurant-show-brief-section" id="section">
+                        <div id="section">
                             <RestaurantOverview restaurant={this.props.restaurant} />
                         </div>
 
@@ -73,7 +74,8 @@ class RestaurantDetail extends React.Component{
                     </div>
 
                     <div className="restaurant-show-nav-container">
-                        <ReservationFrom restaurant={this.props.restaurant}/>
+                        <ReservationForm restaurant={this.props.restaurant}/>
+                        <RestaurantShowNav restaurant={this.props.restaurant} />
                     </div>
                 </div>
             </div>

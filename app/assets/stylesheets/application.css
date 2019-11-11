@@ -18,6 +18,7 @@
  *= featured_cities
  *= restaurant_index
  *= restaurant_show_page
+ *= restaurant_show_navbar
  *= require_tree .
  *= require_self
  */
