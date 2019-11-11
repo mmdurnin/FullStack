@@ -4,6 +4,7 @@ import { clearErrors } from '../../actions/session_actions';
 import LoginUser from '../session/login_user_container';
 import SignupUser from '../session/signup_user_container';
 import { connect } from 'react-redux';
+import ReservationFrom from '../reservations/reservation_form';
 
 function Modal({modal, closeModal}) {
     if (!modal) {
@@ -13,11 +14,9 @@ function Modal({modal, closeModal}) {
     let component;
     switch (modal) {
         case('login'):
-
             component = <LoginUser />;
             break;
         case ('signup'):
-
             component = <SignupUser />;
             break;
         default: 

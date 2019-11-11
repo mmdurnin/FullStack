@@ -1,4 +1,5 @@
 import React from 'react';
+import ReservationFrom from '../reservations/reservation_form';
 
 class RestaurantDetail extends React.Component{
     constructor(props){
@@ -10,6 +11,10 @@ class RestaurantDetail extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
     }
+
+    // scrollToSection(e) => {
+    //     if(this.)
+    // }
 
     componentDidMount(){
         this.props.fetchRestaurant(this.props.match.params.restaurantId)
@@ -23,7 +28,7 @@ class RestaurantDetail extends React.Component{
 
     render(){
         if (this.props.restaurant == null) return null;
-
+        console.log(this.props)
         return(
             <div className="restaurant-show-window">
 
@@ -39,32 +44,36 @@ class RestaurantDetail extends React.Component{
                             <div>General Info</div>
                             <div>Reviews</div>
                         </div>
-                        <div className="show-main-content-container">
-                            {this.props.restaurant.name}
+
+
+                        <div className="restaurant-show-name" id="section">{this.props.restaurant.name}</div>
+
+                        <div className="restaurant-show-summary-section" id="section">
+                            <div className="restaurant-show-main-section-title">Summary</div>
+                            <div className="restaurant-show-summary">{this.props.restaurant.summary}</div>
                         </div>
+
+                        <div className="restaurant-show-image-section" id="section">
+                            <div className="restaurant-show-main-section-title">Photos</div>
+                            <div className="restaurant-show-image-container">
+                                <img src={this.props.restaurant.image}/>
+                            </div>
+                        </div>
+
+                        <div className="restaurant-show-brief-section" id="section">
+                            <div className="restaurant-show-main-section-title">General Info</div>
+                            (paceholder)
+                        </div>
+
+                        <div className="restaurant-show-reviews-section" id="section">
+                            <div className="restaurant-show-main-section-title">Reviews</div>
+                            (paceholder)
+                        </div>
+
                     </div>
 
                     <div className="restaurant-show-nav-container">
-                        <div className="restaurant-show-reservation-container">
-                            <div className="reservation-container-header">Make a reservation</div>
-                            <div className="reservation-container-content">
-                                <form onSubmit={this.handleSubmit}>
-
-                                    <div className="reservation-form-section">
-                                        <label>Party Size</label>
-                                    </div>
-
-                                    <div className="reservation-form-section res-datetime">
-                                        <label>Date</label>
-                                        <label>Time</label>
-                                    </div>
-
-                                    <div className="reservation-form-section">
-                                        <input type="submit" value="Confirm Reservation"/>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                        <ReservationFrom restaurant={this.props.restaurant}/>
                     </div>
                 </div>
             </div>
