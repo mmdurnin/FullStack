@@ -21,8 +21,10 @@ class Home extends React.Component{
         return(
             <div>
                 <SearchBarContainer />
-                <FeaturedRestaurantsIndex restaurants={this.props.featuredRestaurants} />
-                <FeaturedCitiesIndex cities={this.props.cities} />
+                <div className="home-content-container">
+                    <FeaturedRestaurantsIndex restaurants={this.props.featuredRestaurants} />
+                    <FeaturedCitiesIndex cities={this.props.cities} />
+                </div>
             </div>
         )
     }

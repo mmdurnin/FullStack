@@ -8,12 +8,14 @@ body {
     font-family: 'VeralaRound', sans-serif;
 }
 
-
 //misc
+.home-content-container {
+    padding: 2.0rem 2.0rem;
+}
+
 .home-icon-title {
-    // margin: 40px;
-    padding: 40px;
-    border-bottom: 1px solid rgb(204,211,222);
+    padding: .875rem .875rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
     margin: 20px;
     color: rgb(51,51,51);
     font-family: 'Source Sans Pro', sans-serif;

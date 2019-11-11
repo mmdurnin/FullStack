@@ -1,5 +1,5 @@
 .featured-restaurants-container {
-    width: 700px;
+    width: 100%;
     text-align: center;
 }
 
@@ -14,7 +14,7 @@
     margin: 20px;
 
     height: 240px;
-    width: 100%;;
+    width: 93%;
 }
 
 .featured-restaurant-item-container {
@@ -26,10 +26,25 @@
 }
 
 .featured-restaurant-icon-parent {
-
+    // height: 300px;
+    // width: 400px;
+    // overflow: hidden;
 }
 
-.featured-restaurant-icon-child {
-    height: auto;
-    width: inherit;
+.featured-restaurant-icon-child img {
+    // height: auto;
+    // width: inherit;
+    // position: relative;
+
+    // float: left;
+    // width:  100px;
+    // height: 100px;
+    // background-position: 50% 50%;
+    // background-repeat:   no-repeat;
+    // background-size:     cover;
+
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+    
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReservationFrom from '../reservations/reservation_form';
+import RestaurantOverview from './restaurant_overview';
 
 class RestaurantDetail extends React.Component{
     constructor(props){
@@ -61,8 +62,7 @@ class RestaurantDetail extends React.Component{
                         </div>
 
                         <div className="restaurant-show-brief-section" id="section">
-                            <div className="restaurant-show-main-section-title">General Info</div>
-                            (paceholder)
+                            <RestaurantOverview restaurant={this.props.restaurant} />
                         </div>
 
                         <div className="restaurant-show-reviews-section" id="section">
