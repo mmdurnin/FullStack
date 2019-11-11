@@ -18,6 +18,11 @@
 
 .website {
     color: rgb(34,123,152);
+    text-decoration: underline;
+}
+
+.website:hover {
+    cursor: pointer;
 }
 
 //SIZING CHANGES
@@ -33,6 +38,10 @@
         z-index: 10;
         width: 640px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, .5);
+    }
+
+    .navbar-overview-container {
+        display: none;
     }
 }
 
@@ -148,7 +157,7 @@
 .overview-icon-header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .overview-icon-child {
@@ -166,7 +175,8 @@
 .summary-subsection-dollars {
     font-size: 16px;
     font-weight: 800;
-    color: rgb(34,123,152);
+    color: gray;
+    padding-left: .5em;
 }
 
 .summary-subsection-title {
@@ -178,6 +188,6 @@
 }
 
 .summary-subsection-description {
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Source Sans Pro', sans-serif;
 }

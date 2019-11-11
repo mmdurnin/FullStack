@@ -20,24 +20,7 @@ class RestaurantShowNav extends React.Component{
         let web = (this.props.restaurant.website)
         if (web === "") web = this.getWebsite();
 
-        const price = {
-            1: "$",
-            2: "$$",
-            3: "$$$",
-            4: "$$$$",
-            5: "$$$$$"
-        }
-
         return(
-            // cuisine
-            // neighborhood
-            // payment methods
-            // parking
-            // wheelchair access
-            // attire
-            // phone
-            // address
-            // website
             <div className="navbar-overview-container">
 
                 <div className="navbar-item">
@@ -56,28 +39,38 @@ class RestaurantShowNav extends React.Component{
                 </div>
 
                 <div className="navbar-item">
-                    <div></div>
-                    <div></div>
+                    <div><img src={window.parking}/></div>
+                    <div>Street/ metered parking</div>
                 </div>
 
                 <div className="navbar-item">
-                    <div></div>
-                    <div></div>
+                    <div><img src={window.wheelchair}/></div>
+                    <div>Wheelchair accessible</div>
                 </div>
 
                 <div className="navbar-item">
-                    <div></div>
-                    <div></div>
+                    <div><img src={window.attire2}/></div>
+                    <div>Casual attire</div>
                 </div>
 
                 <div className="navbar-item">
-                    <div></div>
-                    <div></div>
+                    <div><img src={window.phone}/></div>
+                    <div>{this.props.restaurant.phone_number}</div>
                 </div>
 
                 <div className="navbar-item">
-                    <div></div>
-                    <div></div>
+                    <div><img src={window.address}/></div>
+                    <div>{this.props.restaurant.address}</div>
+                </div>
+
+                <div className="navbar-item" id="icon-resize">
+                    <div><img src={window.mouse}/></div>
+                    <div>{web}</div>
+                </div>
+
+                <div className="navbar-item" id="icon-resize">
+                    <div><img src={window.hours}/></div>
+                    <div>{this.props.restaurant.hours}</div>
                 </div>
 
             </div>
