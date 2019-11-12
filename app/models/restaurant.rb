@@ -7,5 +7,11 @@ class Restaurant < ApplicationRecord
         foreign_key: :city_id,
         class_name: 'City'
 
+    has_many :reservations,
+        primary_key: :id,
+        foreign_key: :restaurant_id,
+        class_name: 'Reservation',
+        dependent: :destroy
+
     has_one_attached :image
 end

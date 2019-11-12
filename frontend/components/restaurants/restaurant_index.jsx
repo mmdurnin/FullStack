@@ -27,7 +27,6 @@ class RestaurantIndex extends React.Component{
                 <div className="restaurant-index-page-container">
 
                     <div className="restaurant-index-navbar-container">
-                        <div>Not Sticky?</div>
                         <div className="sticky-navbar">
                             <div className="price-filter-container">
                                 Price:

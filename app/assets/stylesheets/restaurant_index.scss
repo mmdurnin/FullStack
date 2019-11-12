@@ -42,12 +42,15 @@
     border-bottom: 1px solid rgb(204,211,222);
 }
 
-//make navbar move to top when window is resized:
-//(this isn't working:)
-// @media all and (max-width: 480px) {
-//     .restaurant-index-page-container { flex-direction: column; }
-//     .restaurant-item-image-container { display: none }
-// }
+@media screen and (max-width: 900px) {
+    .sticky-navbar {
+        display: none;
+    }
+
+    .restaurant-index-page-container {
+        width: 90%;
+    }
+}
 
 .restaurant-list-container {
     position: relative;

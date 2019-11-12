@@ -84,11 +84,11 @@ class SearchForm extends React.Component{
                             placeholder="Select a city" 
                         />
 
-                        <label >
+                        <label>
                             <input 
                             className="search-bar-input"
                             placeholder="Select date"
-                            type="text"
+                            type="date"
                             />
                         </label>
 

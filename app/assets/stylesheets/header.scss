@@ -16,7 +16,7 @@
 }
 
 .greeting {
-    margin-right: 10px;
+    margin-right: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -24,7 +24,7 @@
 }
 
 .logo {
-    margin-left: 30px;
+    margin-left: 50px;
     position: relative;
     height: 100%;
 
@@ -49,7 +49,7 @@
 .logo-img img{
     height: 43px;
     margin-right: 5px;
-    margin-top: 4px;
+    margin-top: 7px;
     margin-right: 5px;
 }
 
@@ -62,17 +62,17 @@
     font-family: 'Varela Round', sans-serif;
     margin-right: 20px;
     width: 150px;
-    height: 20px;
+    height: 10px;
     display: flex;
     justify-content: space-evenly;
 }
 
 .greeting-session-nav > * {
     width: 75px;
-    height: 30px;
+    height: 38px;
     border-radius: 6%;
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
     border: 0px;
 }
 

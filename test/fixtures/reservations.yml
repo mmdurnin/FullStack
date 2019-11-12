@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  restaurant_id: 1
+  user_id: 1
+  starts_at: 2019-11-11 09:56:01
+  num_guests: 1
+
+two:
+  restaurant_id: 1
+  user_id: 1
+  starts_at: 2019-11-11 09:56:01
+  num_guests: 1
