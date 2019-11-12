@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Greeting extends React.Component {
     constructor(props){
@@ -10,7 +11,8 @@ class Greeting extends React.Component {
             <div className="greeting">
                 {!!(this.props.loggedIn) ? (
                     <div className="greeting-loggedin-session-nav">
-                        <h1>Hi, {this.props.user.name}</h1>
+                        <h1>Hi There!</h1>
+                        <button><Link to="/profile">{this.props.user.name}</Link></button>
                         <button onClick={()=> this.props.logout()}>Log Out</button>
                     </div>
                 ) : (
