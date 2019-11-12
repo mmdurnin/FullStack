@@ -2,12 +2,13 @@ require 'Date'
 
 class Api::ReservationsController < ApplicationController
     def index
-        @reservations = current_user.reservations
+        @reservations = current_user.reservations.includes(:restaurant)
+
         render :index
     end
 
     def show
-        @reservation = current_user.reservations.find_by(id: params[:id])
+        @reservation = current_user.reservations.includes(:restaurant).find_by(id: params[:id])
 
         # @date_year = @reservation.starts_at.year
         # @date_month = @reservation.starts_at.month
