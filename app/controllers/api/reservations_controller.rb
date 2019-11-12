@@ -48,16 +48,13 @@ class Api::ReservationsController < ApplicationController
 
     def destroy
         @reservation = reservation.find_by(id: params(:id))
+        @reservationId = @reservation.id
+        @reservation.destroy!
+        render json: @reservationId
     end
 
     private
     def reservation_params
         params.require(:reservation).permit(:restaurant_id, :starts_at, :num_guests)
     end
-end
-
-
-def parse_date(date_string)
-    # return DateTime.ParseExact(date_string, "dd/MM/yyyy HH:mm:ss",null)
-    return date_string.to_datetime
 end
