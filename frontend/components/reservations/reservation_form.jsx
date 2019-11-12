@@ -11,12 +11,12 @@ class ReservationForm extends React.Component {
             time: "",
             num_guests: ""
         }
-
+        
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    
     update(field) {
-
+        
         return e => {
             this.setState({[field]:e.currentTarget.value})
         }
@@ -40,6 +40,7 @@ class ReservationForm extends React.Component {
             this.props.openModal('login')
         }
     };
+
 
     
 
@@ -73,7 +74,7 @@ class ReservationForm extends React.Component {
 
                         <div id="section">
                             <label className="res-dropdown">
-                                <select value={this.state.num_guests.value} onChange={this.update("num_guests")}>
+                                {/* <select value={this.state.num_guests.value} onChange={this.update("num_guests")}>
                                     <option selected disabled value="">Party Size</option>
                                     <option value="1">1 person</option>
                                     <option value="2">2 people</option>
@@ -87,7 +88,15 @@ class ReservationForm extends React.Component {
                                     <option value="10">10 people</option>
                                     <option value="11">11 people</option>
                                     <option value="12">12 people</option>
-                                </select>
+                                </select> */}
+                                <input 
+                                onChange={this.update("num_guests")}
+                                className="reservation-party-size"
+                                type="number"
+                                placeholder="Party size"
+                                value={this.state.num_guests}
+                                min="1"
+                                max="12" />
                             </label>
 
                         </div>
