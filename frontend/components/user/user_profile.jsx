@@ -1,4 +1,5 @@
 import React from 'react';
+import ReservationDetail from '../reservations/reservation_detail';
 
 class UserProfile extends React.Component{
     constructor(props){
@@ -29,7 +30,13 @@ class UserProfile extends React.Component{
                         this.props.reservations.map((el, i) => {
                             return <li key={i} className="profile-sub-container">
                                         <img src={el.restaurant_image} alt=""/>
-                                        <div>{el.restaurant_name}</div>
+                                        <div className="profile-res-info">
+                                            <ReservationDetail 
+                                            reservation={el}
+                                            user={this.props.user}
+                                            fetchReservation={this.props.fetchReservation}
+                                            />
+                                        </div>
                                     </li>
                         })
                     }
@@ -40,3 +47,7 @@ class UserProfile extends React.Component{
 }
 
 export default UserProfile;
+
+
+{/* <div>{el.starts_at}</div>
+<div>{el.restaurant_name}</div> */}
