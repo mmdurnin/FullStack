@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
         !!current_user
     end
 
-    def require_login  # Prevent logged out users from seeing certain pages
-        redirect_to new_session_url unless logged_in?
+    def require_login  
+        redirect_to :root unless logged_in?
     end
 
 
