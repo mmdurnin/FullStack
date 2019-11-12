@@ -6,10 +6,6 @@ class CityIndexItem extends React.Component{
         super(props)
     }
 
-    getImage(){
-
-    }
-
 
     render(){
         return(

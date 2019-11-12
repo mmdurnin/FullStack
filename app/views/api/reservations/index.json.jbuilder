@@ -2,6 +2,7 @@
     json.set! reservation.id do 
         json.partial! '/api/reservations/reservation', reservation: reservation
         json.starts_at reservation.starts_at
+        json.restaurant_image url_for(reservation.restaurant.image)
         json.restaurant_name reservation.restaurant.name
         json.restaurant_phone reservation.restaurant.phone_number
     end
