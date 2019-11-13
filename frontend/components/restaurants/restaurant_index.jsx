@@ -30,7 +30,7 @@ class RestaurantIndex extends React.Component{
                         <div className="sticky-navbar">
                             <div className="price-filter-container">
                                 Price:
-                                <div class="price-buttons">
+                                <div className="price-buttons">
                                     <button>$$</button>
                                     <button>$$$</button>
                                     <button>$$$$</button>

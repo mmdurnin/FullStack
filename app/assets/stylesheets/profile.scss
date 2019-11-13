@@ -123,8 +123,20 @@
 
 .user-profile-reservation-date {
     // background-color: cadetblue;
-    height: 100%;
+    height: 50%;
 
     border: 2px double gray;
     padding: 1em;
+}
+
+.delete-reservation {
+    border-radius: 2px;
+    background-color: rgb(218,55,66);
+    color: rgb(255,255,255);
+    text-align: center;
+    cursor: pointer;
+    height: 20%;
+    width: 100%;
+    margin-top: .5rem;
+    box-shadow: none;
 }

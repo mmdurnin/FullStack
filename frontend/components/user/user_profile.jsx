@@ -34,7 +34,8 @@ class UserProfile extends React.Component{
                                             <ReservationDetail 
                                             reservation={el}
                                             user={this.props.user}
-                                            fetchReservation={this.props.fetchReservation}
+                                            deleteReservation={this.props.deleteReservation}
+                                            updateReservation={this.props.updateReservation}
                                             />
                                         </div>
                                     </li>

@@ -6,7 +6,7 @@ class ReservationForm extends React.Component {
         super(props)
 
         this.state = {
-            restaurant_id: this.props.restaurant.id,
+            restaurant_id: this.props.restaurantId,
             date: "",
             time: "",
             num_guests: ""
@@ -29,7 +29,7 @@ class ReservationForm extends React.Component {
         console.log(this.state.time)
 
         if (this.props.loggedIn) {
-            this.props.createReservation({
+            this.props.action({
                 restaurant_id: this.state.restaurant_id,
                 starts_at: dateTime,
                 num_guests: this.state.num_guests

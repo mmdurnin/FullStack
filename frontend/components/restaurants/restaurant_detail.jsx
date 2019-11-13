@@ -7,16 +7,7 @@ class RestaurantDetail extends React.Component{
     constructor(props){
         super(props)
 
-        // this.handleSubmit = this.handleSubmit.bind(this)
     }
-
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    // }
-
-    // scrollToSection(e) => {
-    //     if(this.)
-    // }
 
     componentDidMount(){
         this.props.fetchRestaurant(this.props.match.params.restaurantId)
@@ -76,8 +67,9 @@ class RestaurantDetail extends React.Component{
                     <div className="restaurant-show-nav-container">
                         <ReservationForm
                         restaurant={this.props.restaurant}
+                        restaurantId={this.props.restaurant.id}
                         fetchReservation={this.props.fetchReservation}
-                        createReservation={this.props.createReservation}
+                        action={this.props.createReservation}
                         loggedIn={this.props.loggedIn}
                         user={this.props.user}
                         openModal={this.props.openModal}

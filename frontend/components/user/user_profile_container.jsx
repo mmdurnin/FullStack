@@ -1,7 +1,7 @@
 
 import { connect } from 'react-redux';
 import UserProfile from './user_profile';
-import { fetchReservations, fetchReservation } from '../../actions/reservation_actions';
+import { fetchReservations, deleteReservation, updateReservation } from '../../actions/reservation_actions';
 
 const msp = (state) => ({
     reservations: Object.values(state.entities.reservations),
@@ -10,7 +10,8 @@ const msp = (state) => ({
 
 const mdp = dispatch => ({
     fetchReservations: () => dispatch(fetchReservations()),
-    fetchReservation: (reservationId) => (fetchReservation(reservationId))
+    deleteReservation: (reservationId) => dispatch(deleteReservation(reservationId)),
+    updateReservation: (reservation) => dispatch(updateReservation(reservation))
 })
 
 export default connect (msp, mdp)(UserProfile);

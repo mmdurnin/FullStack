@@ -17,12 +17,6 @@ class Api::ReservationsController < ApplicationController
             return
         end
 
-        # @date_year = @reservation.starts_at.year
-        # @date_month = @reservation.starts_at.month
-        # @date_day = @reservation.starts_at.day 
-        # @date_hour = @reservation.starts_at.hour 
-        # @date_min = @reservation.starts_at.minutes
-
         @reservation_date = @reservation.starts_at.strftime("%B/%d/%Y")
         @reservation_time = @reservation.starts_at.strftime("%I:%M %p") 
         
@@ -45,7 +39,7 @@ class Api::ReservationsController < ApplicationController
     end
 
     def update
-        @reservation = reservation.find_by(id: params(:id))
+        @reservation = Reservation.find_by(id: params[:id])
 
         if @reservation.user_id != current_user.id 
             render json: ["Oops! This isn't your reservation"]
@@ -62,14 +56,15 @@ class Api::ReservationsController < ApplicationController
     end
 
     def destroy
-        @reservation = reservation.find_by(id: params(:id))
+        @reservation = Reservation.find_by(id: params[:id])
         if @reservation.user_id != current_user.id 
             render json: ["Oops! This isn't your reservation"]
             return 
         end
 
         @reservationId = @reservation.id
-        @reservation.destroy!
+        @reservation.destroy
+        
         render json: @reservationId
     end
 
