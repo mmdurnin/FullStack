@@ -1,5 +1,3 @@
-require 'Date'
-
 class Api::ReservationsController < ApplicationController
     before_action :require_login
 
