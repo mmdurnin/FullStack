@@ -1,5 +1,6 @@
 import React from 'react'
 import ReservationForm from './reservation_form';
+import { Link } from 'react-router-dom';
 
 class ReservationDetail extends React.Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class ReservationDetail extends React.Component {
 
         return(
             <div>
-                <div className="user-profile-res-restaurant-name">{this.props.reservation.restaurant_name}</div>
+                <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}><div className="user-profile-res-restaurant-name">{this.props.reservation.restaurant_name}</div></Link>
                 <div className="user-profile-reservation-overview">
                     <div className="user-profile-reservation-overview-sections">
                         <div className="user-profile-res-partyof">{this.props.user.name}, party of: {this.props.reservation.num_guests}</div>
