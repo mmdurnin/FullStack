@@ -1,6 +1,7 @@
 @reservations.each do |reservation|
     json.set! reservation.id do 
         json.partial! '/api/reservations/reservation', reservation: reservation
+        json.prefill_date reservation.starts_at.strftime("%Y-%m-%d")
         json.starts_at_date reservation.starts_at.strftime("%B/%d/%Y")
         json.starts_at_time reservation.starts_at.strftime("%I:%M %p") 
         json.restaurant_image url_for(reservation.restaurant.image)

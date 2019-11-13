@@ -34,7 +34,7 @@ class ReservationForm extends React.Component {
                 starts_at: dateTime,
                 num_guests: this.state.num_guests
             })
-            this.props.history.push("/");
+            this.props.history.push("/profile");
 
         } else {
             this.props.openModal('login')
@@ -46,7 +46,7 @@ class ReservationForm extends React.Component {
 
 
     render() {
-        if (this.props.restaurant === undefined) return null;
+        if (this.props.restaurantId === undefined) return null;
 
         const timeOptions = ["12:00 PM", "12:30PM"];
         let time;
@@ -68,13 +68,13 @@ class ReservationForm extends React.Component {
         console.log(this.props)
         return (
             <div className="restaurant-show-reservation-container" id="resized-reservation-form">
-                <div className="reservation-container-header">Make a reservation</div>
+                <div className="reservation-container-header">{this.props.title}</div>
                 <div className="reservation-container-form">
                     <form onSubmit={this.handleSubmit}>
 
                         <div id="section">
                             <label className="res-dropdown">
-                                {/* <select value={this.state.num_guests.value} onChange={this.update("num_guests")}>
+                                 {/* <select value={this.state.num_guests.value} onChange={this.update("num_guests")}>
                                     <option selected disabled value="">Party Size</option>
                                     <option value="1">1 person</option>
                                     <option value="2">2 people</option>
@@ -88,7 +88,7 @@ class ReservationForm extends React.Component {
                                     <option value="10">10 people</option>
                                     <option value="11">11 people</option>
                                     <option value="12">12 people</option>
-                                </select> */}
+                                </select>  */}
                                 <input 
                                 onChange={this.update("num_guests")}
                                 className="reservation-party-size"

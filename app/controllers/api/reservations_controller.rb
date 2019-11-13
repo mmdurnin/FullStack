@@ -4,7 +4,7 @@ class Api::ReservationsController < ApplicationController
     before_action :require_login
 
     def index
-        @reservations = current_user.reservations.includes(:restaurant)
+        @reservations = current_user.reservations.includes(:restaurant).order(id: :desc)
 
         render :index
     end
@@ -39,7 +39,7 @@ class Api::ReservationsController < ApplicationController
     end
 
     def update
-        @reservation = Reservation.find_by(id: params[:id])
+        @reservation = Reservation.includes(:restaurant).find_by(id: params[:id])
 
         if @reservation.user_id != current_user.id 
             render json: ["Oops! This isn't your reservation"]

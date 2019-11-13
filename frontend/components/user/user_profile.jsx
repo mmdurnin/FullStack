@@ -27,11 +27,11 @@ class UserProfile extends React.Component{
                 </div>
                 <ul className="profile-sub-container-parent">
                     {
-                        this.props.reservations.map((el, i) => {
+                        this.props.reservations.reverse().map((el, i) => {
                             return <li key={i} className="profile-sub-container">
                                         <img src={el.restaurant_image} alt=""/>
                                         <div className="profile-res-info">
-                                            <ReservationDetail 
+                                            <ReservationDetail
                                             reservation={el}
                                             user={this.props.user}
                                             deleteReservation={this.props.deleteReservation}

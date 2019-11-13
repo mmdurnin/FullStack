@@ -74,6 +74,7 @@ class RestaurantDetail extends React.Component{
                         user={this.props.user}
                         openModal={this.props.openModal}
                         history={this.props.history}
+                        title={"Make a reservation"}
                         />
                         <RestaurantShowNav restaurant={this.props.restaurant} />
                     </div>
