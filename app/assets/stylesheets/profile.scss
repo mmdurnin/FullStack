@@ -17,6 +17,7 @@
 }
 
 .profile-greeting {
+    box-sizing: border-box;
     background-color: rgb(255,255,255);
     width: 100%;
     padding: .875rem 3rem;
@@ -26,6 +27,7 @@
 }
 
 .profile-greeting-nav {
+    box-sizing: border-box;
     background-color: rgb(255,255,255);
     width: 100%;
     padding: 0 3rem;
@@ -52,7 +54,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 95%;
+    width: 100%;
 
 }
 
@@ -132,7 +134,7 @@
 
 .update-res-form {
     display: flex;
-    flex-direction: center;
+    flex-direction: column;
     justify-content: center;
     align-items: space-evenly;
     width: 25%;

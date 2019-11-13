@@ -19,8 +19,6 @@ class Reservation < ApplicationRecord
             .where(user_id: user_id) #existing reservations with the same user, restaurant, and start time
             .where(restaurant_id: restaurant_id)
             .where(starts_at: starts_at).count
-
-        p existing_res
         
         existing_res > 0 ? 'It looks like you have already reserved for this time' : return
     end

@@ -76,6 +76,7 @@ class ReservationDetail extends React.Component {
                             <div>{this.props.reservation.starts_at_time}</div>
                         </div>
                     </div>
+
                     <div className="update-res-form">
                         <form onSubmit={this.handleSubmit}>
                             <input 
@@ -107,10 +108,11 @@ class ReservationDetail extends React.Component {
                             </select>
 
                             <input className="submit-update" type="submit" value="Update reservation"/>
-                            <button className="delete-reservation" onClick={() => this.props.deleteReservation(this.props.reservation.id)}>Delete Reservation</button>
-
                         </form>
+                        <button className="delete-reservation" onClick={() => this.props.deleteReservation(this.props.reservation.id)}>Delete Reservation</button>
                     </div>
+
+                    
                 </div>
             </div>
         )
