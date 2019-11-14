@@ -15,6 +15,12 @@ class User < ApplicationRecord
         class_name: 'Reservation',
         dependent: :destroy
 
+    has_many :reviews,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: 'Review',
+        dependent: :destroy
+
 
     def self.generate_session_token
         SecureRandom.urlsafe_base64(16)

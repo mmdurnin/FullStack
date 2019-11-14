@@ -13,5 +13,10 @@ class Restaurant < ApplicationRecord
         class_name: 'Reservation',
         dependent: :destroy
 
+    has_many :reviews,
+        primary_key: :id,
+        foreign_key: :restaurant_id,
+        class_name: 'Review'
+
     has_one_attached :image
 end
