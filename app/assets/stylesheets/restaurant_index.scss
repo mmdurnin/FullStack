@@ -62,6 +62,24 @@
     width: 775px;
 }
 
+.dummie-search-results {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.search-results-guide {
+    font-weight: 900;
+}
+
+.search-results-parameter {
+    padding-left: .2rem;
+    font-style: italic;
+    color: rgb(152, 152, 152)
+}
+
 .restaurant-index-item-container {
     position: relative;
     box-sizing: border-box;

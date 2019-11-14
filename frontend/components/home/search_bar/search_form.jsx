@@ -33,6 +33,8 @@ class SearchForm extends React.Component{
         if (this.state.city !== "") {
             cityId = this.state.city
         }
+        console.log("this.state.date")
+        console.log(this.state.date)
         this.props.history.push(`/restaurants?city_id=${cityId}&time=${this.state.time}&guests=${this.state.numPeople}&date=${this.state.date}&restaurant=${this.state.restaurant}`)
     }
 
@@ -74,7 +76,6 @@ class SearchForm extends React.Component{
                             placeholder="select a city"
                             value={this.state.city}
                         >
-                            <option value="">Select a city:</option>
                             {
                                 this.props.cities.map((city, idx) => {
                                     return <option key={idx} value={city.id}>{city.name}</option>
@@ -86,6 +87,7 @@ class SearchForm extends React.Component{
                         <label>
                             <input 
                             className="search-bar-input"
+                            onChange={this.update("date")}
                             placeholder="Select date"
                             type="date"
                             />
