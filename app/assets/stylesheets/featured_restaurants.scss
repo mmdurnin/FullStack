@@ -19,9 +19,9 @@
 
 .featured-restaurant-item-container {
     display: inline-block;
-    height: 300px;
+    height: 250px;
     text-align: center;
-    padding: 0 2rem;
+    // padding: 0 2rem;
     margin: 0 3rem;
     margin-bottom: .85rem;
     border: 2px solid rgba(0, 0, 0, 0.12);
@@ -33,16 +33,16 @@
 
 .home-page-restaurant-name {
     height: 40px;
-    width: 200px;
+    width: 300px;
     padding-top: .85rem;
-    font-weight: 800;
+    font-weight: 1000;
     font-family: 'Source Sans Pro', sans-serif;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .featured-restaurant-icon-parent {
-    height: 200px;
-    width: 200px;
+    height: auto;
+    width: 300px;
 
     flex: 0 0 auto;
     overflow: hidden;
@@ -51,6 +51,6 @@
 .featured-restaurant-icon-child img {
     object-fit: cover;
     height: 200px;
-    width: 200px;
+    width: 300px;
     
 }
