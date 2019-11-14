@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-.featured-restaurants-container > * { //the ul is the child so we hve to refer to the ul (> *)
+.featured-restaurants-container  ul { //the ul is the child so we hve to refer to the ul (> *)
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -14,7 +14,7 @@
     margin: 20px;
 
     height: auto;
-    width: 93%;
+    // width: 93%;
 }
 
 .featured-restaurant-item-container {
