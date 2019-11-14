@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-// import { withRouter } from 'react-router-dom';
 import RestaurantDetail from './restaurant_detail';
 import { fetchRestaurant } from '../../actions/restaurant_actions';
 import { createReservation, fetchReservation } from '../../actions/reservation_actions';

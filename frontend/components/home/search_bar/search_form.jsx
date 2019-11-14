@@ -1,11 +1,9 @@
 import React from 'react';
-import Dropdown from 'react-dropdown'
 
 class SearchForm extends React.Component{
     constructor(props){
         super(props)
 
-        this.handleSubmit = this.handleSubmit.bind(this)
         this.state={
             city: "",
             date: "",
@@ -13,7 +11,8 @@ class SearchForm extends React.Component{
             numPeople: "",
             restaurant: ""
         }
-
+        
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount(){
@@ -40,12 +39,6 @@ class SearchForm extends React.Component{
     }
 
     render(){
-
-        // city dropdown options
-        const cityOptions = [];
-        this.props.cities.map((el) => {
-            cityOptions.push({value: el.id, label: el.name})
-        });
         
         //numGuest dropdown options
         const numGuestOptions = [({value: 1, label: "1 guest"})];
@@ -74,15 +67,22 @@ class SearchForm extends React.Component{
         return(
             <div >
                 <form className="search-form-parent" onSubmit={this.handleSubmit}>
+
                     <div className="search-bar-smooshed">
                         
-                        <Dropdown 
+                        <select 
                             className="search-bar-dropdown"
-                            options={cityOptions}
-                            value={cityOptions[this.state.city - 1]}
-                            onChange={this.updateDropDown("city")} 
-                            placeholder="Select a city" 
-                        />
+                            onChange={this.updateDropDown("city")}
+                            placeholder="select a city"
+                        >
+                            <option value="0">Select a city:</option>
+                            {
+                                this.props.cities.map((city, idx) => {
+                                    return <option key={idx} value={city.id}>{city.name}</option>
+                                })
+                            }
+                        
+                        </select>
 
                         <label>
                             <input 
@@ -92,21 +92,31 @@ class SearchForm extends React.Component{
                             />
                         </label>
 
-                        <Dropdown 
+                        <select 
                             className="search-bar-dropdown"
-                            options={timeOptions}
-                            value={timeOptions[this.state.time - 1]}
                             onChange={this.updateDropDown("time")}  
-                            placeholder="Time"
-                        />
+                        >
+                            <option value="">Select time:</option>
+                            {
+                                timeOptions.map((time, idx) => {
+                                    return <option key={idx} value={time}>{time}</option>
+                                })
+                            }
 
-                        <Dropdown 
+                        </select>
+
+                        <select
                             className="search-bar-dropdown"
-                            options={numGuestOptions}
-                            value={numGuestOptions[this.state.numPeople - 1]}
                             onChange={this.updateDropDown("numPeople")} 
-                            placeholder="Table for... "  
-                        />
+                        >
+                        <option value="">Table for...</option>
+                            {
+                                numGuestOptions.map((el, idx) => {
+                                    return <option key={idx} value={el.value}>{el.label}</option>
+                                })
+                            }
+
+                        </select>
                     </div>
 
                     <label className="search-bar-island">

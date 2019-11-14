@@ -121,20 +121,3 @@ class ReservationDetail extends React.Component {
 
 export default ReservationDetail;
 
-//  <ReservationForm
-//     action={this.props.updateReservation}
-//     restaurantId={this.props.reservation.restaurant_id}
-//     title={"Update your reservation"}
-//     /> 
-
-
-// const msp = (state) => ({
-//     reservations: Object.values(state.entities.reservations),
-//     user: state.entities.users[state.session.id]
-// })
-
-// const mdp = dispatch => {
-//     updateReservation: (reservation) => dispatch(updateReservation(reservation))
-// }
-
-// export default connect(msp, mdp)(ReservationDetail)

@@ -150,19 +150,3 @@ class ReservationForm extends React.Component {
 
 export default ReservationForm;
 
-// const msp = (state, ownProps) => ({
-//     restaurant: state.entities.restaurants[ownProps.restaurantId],
-//     loggedIn: Boolean(state.session.id),
-//     history: this.ownProps.history,
-//     user: state.entities.users[state.session.id],
-//     errors: state.errors.reservation
-// })
-
-// const mdp = dispatch => ({
-//     action: (reservation) => dispatch(createReservation(reservation)),
-//     fetchReservation: (reservationId) => dispatch(fetchReservation(reservationId)),
-//     openModal: modal => dispatch(openModal(modal))
-// })
-
-// export default connect(msp, mdp)(ReservationForm)
-
