@@ -8,7 +8,8 @@ import { openModal } from '../../actions/modal_actions';
 const msp = (state, ownProps) => ({
     restaurant: state.entities.restaurants[ownProps.match.params.restaurantId],
     loggedIn: Boolean(state.session.id),
-    user: state.entities.users[state.session.id]
+    user: state.entities.users[state.session.id],
+    errors: state.errors.reservation
 })
 
 const mdp = dispatch => ({

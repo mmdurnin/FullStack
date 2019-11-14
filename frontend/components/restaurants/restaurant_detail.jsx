@@ -1,5 +1,5 @@
 import React from 'react';
-import ReservationForm from '../reservations/reservation_form';
+import ReservationFormContainer from '../reservations/reservation_form';
 import RestaurantOverview from './restaurant_overview';
 import RestaurantShowNav from './restaurant_show_nav';
 
@@ -26,6 +26,7 @@ class RestaurantDetail extends React.Component{
             <div className="restaurant-show-window">
 
                 <div className="restaurant-show-header">
+                    {/* <img src={window.background_show} alt=""/> */}
                 </div>
 
                 <div className="restaurant-show-page">
@@ -59,13 +60,13 @@ class RestaurantDetail extends React.Component{
 
                         <div className="restaurant-show-reviews-section" id="section">
                             <div className="restaurant-show-main-section-title">Reviews</div>
-                            (paceholder)
+                            (placeholder)
                         </div>
 
                     </div>
 
                     <div className="restaurant-show-nav-container">
-                        <ReservationForm
+                        <ReservationFormContainer
                         restaurant={this.props.restaurant}
                         restaurantId={this.props.restaurant.id}
                         fetchReservation={this.props.fetchReservation}
@@ -75,6 +76,8 @@ class RestaurantDetail extends React.Component{
                         openModal={this.props.openModal}
                         history={this.props.history}
                         title={"Make a reservation"}
+                        errors={this.props.errors}
+                        restaurant={this.props.restaurant}
                         />
                         <RestaurantShowNav restaurant={this.props.restaurant} />
                     </div>
@@ -85,3 +88,4 @@ class RestaurantDetail extends React.Component{
 }
 
 export default RestaurantDetail;
+

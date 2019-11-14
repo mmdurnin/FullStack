@@ -1,5 +1,4 @@
-import React from 'react'
-import ReservationForm from './reservation_form';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 class ReservationDetail extends React.Component {
@@ -112,7 +111,7 @@ class ReservationDetail extends React.Component {
                         <button className="delete-reservation" onClick={() => this.props.deleteReservation(this.props.reservation.id)}>Delete Reservation</button>
                     </div>
 
-                    
+
                 </div>
             </div>
         )

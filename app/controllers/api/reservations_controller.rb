@@ -26,12 +26,16 @@ class Api::ReservationsController < ApplicationController
 
         @reservation.user_id = current_user.id
         @reservation.starts_at = reservation_params[:starts_at].to_datetime
+        
+        # debugger
 
         if @reservation.save
             @reservation_date = @reservation.starts_at.strftime("%B/%d/%Y")
             @reservation_time = @reservation.starts_at.strftime("%I:%M %p")     
             render :show
         else
+            # p "create errors logic is working"
+            # p "#{@reservation.errors.full_messages}"
             render json: @reservation.errors.full_messages, status: 418
         end
     end
@@ -49,6 +53,7 @@ class Api::ReservationsController < ApplicationController
         if @reservation.update_attributes(reservation_params)
             render :show
         else
+            p "#{@reservation.errors.full_messages}"
             render json: @reservation.errors.full_messages
         end
     end

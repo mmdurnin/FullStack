@@ -15,12 +15,16 @@ class Reservation < ApplicationRecord
 
     def existing_res
         existing_res = Reservation
-            .where.not(id: self.id) #only looking for duplicates
+            .where.not(id: self.id) #this line is pointless I think
             .where(user_id: user_id) #existing reservations with the same user, restaurant, and start time
             .where(restaurant_id: restaurant_id)
             .where(starts_at: starts_at).count
-        
-        existing_res > 0 ? 'It looks like you have already reserved for this time' : return
+            
+            p "#{existing_res}"
+            p errors
+            p self.errors
+            return if existing_res > 0
+            self.errors[:base] << 'It looks like you have already reserved for this time'
     end
 
 end

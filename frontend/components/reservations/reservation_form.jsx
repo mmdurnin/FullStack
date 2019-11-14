@@ -1,4 +1,7 @@
 import React from 'react';
+// import { connect } from 'react-redux';
+// import { createReservation, fetchReservation } from '../../actions/reservation_actions';
+// import { openModal } from '../../actions/modal_actions'; 
 // import {withRouter } from 'react-router-dom';
 
 class ReservationForm extends React.Component {
@@ -22,7 +25,8 @@ class ReservationForm extends React.Component {
         }
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
         let dateTime = `${this.state.date}` + ` ` + `${this.state.time}`
 
         console.log(dateTime)
@@ -33,15 +37,12 @@ class ReservationForm extends React.Component {
                 restaurant_id: this.state.restaurant_id,
                 starts_at: dateTime,
                 num_guests: this.state.num_guests
-            })
-            this.props.history.push("/profile");
+            }).then(() => this.props.history.push("/profile")).fail(() => this.render());
 
         } else {
             this.props.openModal('login')
         }
     };
-
-
     
 
 
@@ -68,7 +69,7 @@ class ReservationForm extends React.Component {
         console.log(this.props)
         return (
             <div className="restaurant-show-reservation-container" id="resized-reservation-form">
-                <div className="reservation-container-header">{this.props.title}</div>
+                <div className="reservation-container-header">Make a reservation</div>
                 <div className="reservation-container-form">
                     <form onSubmit={this.handleSubmit}>
 
@@ -125,6 +126,16 @@ class ReservationForm extends React.Component {
                             </label>
 
                         </div>
+                        
+                        <div className="create-reservation-errors">
+                            <ul>
+                                {
+                                    this.props.errors.map((error, i)=> {
+                                        return <li key={i}>{error}</li>
+                                    })
+                                }
+                            </ul>
+                        </div>
 
                         <div id="section">
                             <input type="submit" value="Confirm Reservation" className="restaurant-show-res-submit"/>
@@ -138,3 +149,20 @@ class ReservationForm extends React.Component {
 }
 
 export default ReservationForm;
+
+// const msp = (state, ownProps) => ({
+//     restaurant: state.entities.restaurants[ownProps.restaurantId],
+//     loggedIn: Boolean(state.session.id),
+//     history: this.ownProps.history,
+//     user: state.entities.users[state.session.id],
+//     errors: state.errors.reservation
+// })
+
+// const mdp = dispatch => ({
+//     action: (reservation) => dispatch(createReservation(reservation)),
+//     fetchReservation: (reservationId) => dispatch(fetchReservation(reservationId)),
+//     openModal: modal => dispatch(openModal(modal))
+// })
+
+// export default connect(msp, mdp)(ReservationForm)
+
