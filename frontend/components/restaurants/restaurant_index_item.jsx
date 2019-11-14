@@ -61,10 +61,10 @@ class RestaurantIndexItem extends React.Component{
 
                     <div className="buttons-container">
                         <div className="restaurant-index-reservation-buttons">
-                            <button>5:30PM</button>
-                            <button>6:00PM</button>
-                            <button>6:30PM</button>
-                            <button>7:00PM</button>
+                        <Link to={`/restaurants/${this.props.restaurant.id}`} ><button>5:30PM</button></Link>
+                        <Link to={`/restaurants/${this.props.restaurant.id}`} ><button>6:00PM</button></Link>
+                        <Link to={`/restaurants/${this.props.restaurant.id}`} ><button>6:30PM</button></Link>
+                        <Link to={`/restaurants/${this.props.restaurant.id}`} ><button>7:00PM</button></Link>
                         </div> 
                         <Link to={`/restaurants/${this.props.restaurant.id}`} ><h5 className="restaurant-item-button-subtext">More Options...</h5></Link>
                     </div>

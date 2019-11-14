@@ -8,13 +8,13 @@ class RestaurantIndex extends React.Component{
     }
 
     componentDidMount() {
-        this.props.fetchRestaurants(this.props.cityId)
+        this.props.fetchRestaurants(this.props.cityId, this.props.restaurantName)
     }
 
     render(){
         if (this.props.restaurants === []) return null
         const backgroundStyle = {backgroundImage: 'url(' + window.searchBarCities[this.props.cityId] + ')'};
-
+        console.log(this.props)
         return(
             <div className="restaurant-index-window-container">
 
@@ -43,6 +43,9 @@ class RestaurantIndex extends React.Component{
                     </div>
 
                     <div className="restaurant-list-container">
+                        <div className="dummie-search-results">Your search:
+                            {/* <div>{this.props.}</div> */}
+                        </div>
                         {
                             this.props.restaurants.map((el, i) => {
                                 return <RestaurantIndexItem key={i} restaurant={el} />
@@ -57,3 +60,10 @@ class RestaurantIndex extends React.Component{
 }
 
 export default RestaurantIndex;
+
+// cityId: values.city_id,
+// time: values.time,
+// date: values.date,
+// guests: values.guests,
+// restaurant: values.restaurant,
+// restaurants: Object.values(state.entities.restaurants),

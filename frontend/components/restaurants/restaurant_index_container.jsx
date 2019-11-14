@@ -14,13 +14,13 @@ const msp = (state, ownProps) => {
         time: values.time,
         date: values.date,
         guests: values.guests,
-        restaurant: values.restaurant,
+        restaurantName: values.restaurant,
         restaurants: Object.values(state.entities.restaurants),
     }
 }
 
 const mdp = dispatch => ({
-    fetchRestaurants: (cityId) => dispatch(fetchRestaurants(cityId))
+    fetchRestaurants: (cityId, restaurantName) => dispatch(fetchRestaurants(cityId, restaurantName))
 })
 
 

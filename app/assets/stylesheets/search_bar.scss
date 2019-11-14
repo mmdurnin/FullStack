@@ -1,3 +1,32 @@
+@media screen and (max-width: 1000px) {
+  .search-bar-smooshed {
+    display: none !important;
+  }
+
+  .search-form-parent {
+    display: flex;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: fit-content !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .search-form-parent * {
+    height: 50px !important;
+    width: 50% !important;
+    margin: .8rem !important;
+  }
+
+  .search-bar-input {
+    position: relative !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    font-size: 18px !important;
+    display: inline block !important;
+    width: 100% !important;
+  }
+}
+
 .search-bar-parent {
   position: relative;
 }
@@ -96,6 +125,8 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    
+    font-size: 20px;
   }
 
  .search-bar-smooshed {
@@ -136,12 +167,15 @@
    padding: 0%;
    height: 100%;
    width: inherit;
-   border-top: none;
-   border-bottom: none;
-   border-left: 1px solid rgb(204,211,222);
-   border-right: 1px solid rgb(204,211,222);
+  //  border-top: none;
+  //  border-bottom: none;
+  //  border-left: 1px solid rgb(204,211,222);
+  //  border-right: 1px solid rgb(204,211,222);
 
    text-align: center;
+   font-size: 15px;
+   border: none;
+   
  }
 
 
@@ -151,31 +185,33 @@
    align-items: center;
    justify-content: center;
 
-   width: 100px;
+   width: auto;
 
-   border-left: 1px solid rgb(204,211,222);
-   border-right: 1px solid rgb(204,211,222);
+   font-size: 15px;
+   border: none;
+  //  border-left: 1px solid rgb(204,211,222);
+  //  border-right: 1px solid rgb(204,211,222);
    font-family: 'Source Sans Pro', sans-serif;
-   color: rgb(117,117,117);
+   background-color: rgb(255,255,255);
   }
   
-  .Dropdown-menu {
-    background-color: rgb(255,255,255);
-    overflow: auto;
-    // border-radius: 5%;
-    position: absolute;
-    top: 100%;
-  }
+  // .Dropdown-menu {
+  //   background-color: rgb(255,255,255);
+  //   overflow: auto;
+  //   // border-radius: 5%;
+  //   position: absolute;
+  //   top: 100%;
+  // }
 
-  .Dropdown-option {
-    width: 100px;
-  }
+  // .Dropdown-option {
+  //   width: 100px;
+  // }
 
-  .search-bar-dropdown:hover {
-    cursor: pointer;
-  }
+  // .search-bar-dropdown:hover {
+  //   cursor: pointer;
+  // }
 
-  .Dropdown-option:hover {
-    background-color: rgba(60, 4, 150, .4);
-    color: black;
-  }
+  // .Dropdown-option:hover {
+  //   background-color: rgba(60, 4, 150, .4);
+  //   color: black;
+  // }

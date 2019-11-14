@@ -4,7 +4,6 @@ import UserProfile from './user_profile';
 import { fetchReservations, deleteReservation, updateReservation } from '../../actions/reservation_actions';
 
 const msp = (state) => {
-    console.log(state)
     return {
     reservations: Object.values(state.entities.reservations),
     user: state.entities.users[state.session.id]

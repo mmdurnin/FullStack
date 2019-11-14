@@ -25,9 +25,6 @@ class ReservationDetail extends React.Component {
     handleSubmit() {
         let dateTime = `${this.state.date}` + ` ` + `${this.state.time}`
 
-        console.log(dateTime)
-        console.log(this.state.time)
-
         this.props.updateReservation({
             id: this.props.reservation.id,
             starts_at: dateTime,
@@ -38,7 +35,6 @@ class ReservationDetail extends React.Component {
 
 
     render() {
-        console.log(this.props)
 
         const timeOptions = ["12:00 PM", "12:30PM"];
         let time;

@@ -42,7 +42,7 @@
     border-bottom: 1px solid rgb(204,211,222);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .sticky-navbar {
         display: none;
     }
@@ -91,7 +91,6 @@
     padding-left: 3%;
     padding-right: 3%;
     flex: 1;
-
 }
 
 .restaurant-item-header {
@@ -152,7 +151,7 @@
     height: 50px;
 }
 
-.restaurant-index-reservation-buttons > * {
+.restaurant-index-reservation-buttons button {
     flex: 0 0 auto;
     width: 100px;
     height: 35px;
@@ -160,6 +159,11 @@
     margin-left: 2px;
     margin-right: 4px;
     text-align: center;
-    background-color: rgb(218,55,66);
+    background-color: rgba(218,55,66,.8);
     color: rgb(255,255,255);
+}
+
+.restaurant-index-reservation-buttons button:hover {
+    text-align: center;
+    background-color: rgb(218,55,66,);
 }

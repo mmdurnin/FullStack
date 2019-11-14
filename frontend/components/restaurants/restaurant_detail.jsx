@@ -21,7 +21,6 @@ class RestaurantDetail extends React.Component{
 
     render(){
         if (this.props.restaurant == null) return null;
-        console.log(this.props)
         return(
             <div className="restaurant-show-window">
 

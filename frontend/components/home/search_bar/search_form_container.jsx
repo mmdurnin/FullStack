@@ -7,8 +7,6 @@ import { fetchRestaurant, fetchRestaurants } from '../../../actions/restaurant_a
 import { fetchCities } from '../../../actions/city_actions';
 
 const msp = (state) => {
-    console.log("state.entities.cities")
-    console.log(state.entities.cities)
     return {
     restaurants: Object.values(state.entities.restaurants),
     cities: Object.values(state.entities.cities)

@@ -18,8 +18,9 @@ export const fetchRestaurant = (restaurantId) => dispatch => {
         .then((restaurant) => dispatch(receiveRestaurant(restaurant)))
 }
 
-export const fetchRestaurants = (cityId) => dispatch => {
-    return RestaurantAPIUtil.fetchRestaurants(cityId)
+export const fetchRestaurants = (cityId, restaurantName = "") => dispatch => {
+
+    return RestaurantAPIUtil.fetchRestaurants(cityId, restaurantName)
         .then((restaurants) => dispatch(receiveRestaurants(restaurants)))
 }
 

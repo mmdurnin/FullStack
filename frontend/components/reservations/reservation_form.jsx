@@ -29,9 +29,6 @@ class ReservationForm extends React.Component {
         e.preventDefault();
         let dateTime = `${this.state.date}` + ` ` + `${this.state.time}`
 
-        console.log(dateTime)
-        console.log(this.state.time)
-
         if (this.props.loggedIn) {
             this.props.action({
                 restaurant_id: this.state.restaurant_id,
@@ -66,7 +63,6 @@ class ReservationForm extends React.Component {
             }
         }
 
-        console.log(this.props)
         return (
             <div className="restaurant-show-reservation-container" id="resized-reservation-form">
                 <div className="reservation-container-header">Make a reservation</div>

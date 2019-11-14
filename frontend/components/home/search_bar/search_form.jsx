@@ -26,16 +26,14 @@ class SearchForm extends React.Component{
         }
     }
 
-    updateDropDown(field) {
-        return e => {
-            this.setState({ [field]: e.value})
-        }
-    }
-
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.history.push(`/restaurants?city_id=${this.state.city}&time=${this.state.time}&guests=${this.state.numPeople}&date=${this.state.date}&restaurant=${this.state.restaurant}`)
+        let cityId = 1
+        if (this.state.city !== "") {
+            cityId = this.state.city
+        }
+        this.props.history.push(`/restaurants?city_id=${cityId}&time=${this.state.time}&guests=${this.state.numPeople}&date=${this.state.date}&restaurant=${this.state.restaurant}`)
     }
 
     render(){
@@ -66,16 +64,17 @@ class SearchForm extends React.Component{
 
         return(
             <div >
-                <form className="search-form-parent" onSubmit={this.handleSubmit}>
+                <form className="search-form-parent" id="search-form-parent-collapsed" onSubmit={this.handleSubmit}>
 
                     <div className="search-bar-smooshed">
                         
                         <select 
                             className="search-bar-dropdown"
-                            onChange={this.updateDropDown("city")}
+                            onChange={this.update("city")}
                             placeholder="select a city"
+                            value={this.state.city}
                         >
-                            <option value="0">Select a city:</option>
+                            <option value="">Select a city:</option>
                             {
                                 this.props.cities.map((city, idx) => {
                                     return <option key={idx} value={city.id}>{city.name}</option>
@@ -94,7 +93,7 @@ class SearchForm extends React.Component{
 
                         <select 
                             className="search-bar-dropdown"
-                            onChange={this.updateDropDown("time")}  
+                            onChange={this.update("time")}  
                         >
                             <option value="">Select time:</option>
                             {
@@ -107,7 +106,7 @@ class SearchForm extends React.Component{
 
                         <select
                             className="search-bar-dropdown"
-                            onChange={this.updateDropDown("numPeople")} 
+                            onChange={this.update("numPeople")}
                         >
                         <option value="">Table for...</option>
                             {
@@ -124,7 +123,7 @@ class SearchForm extends React.Component{
                         className="search-bar-input"
                         placeholder="Search for a restaurant *"
                         type="text"
-                        //    onChange={this.update("restaurant")}
+                        onChange={this.update("restaurant")}
                         />
                     </label>
 

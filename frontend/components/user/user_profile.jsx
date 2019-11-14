@@ -15,7 +15,6 @@ class UserProfile extends React.Component{
         if (this.props.reservations === []) return null;
         if (this.props.user === undefined) return null;
 
-        console.log(this.props)
 
         return(
             <div className="profile-page-window-container">
