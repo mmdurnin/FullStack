@@ -23,7 +23,7 @@ class Reservation < ApplicationRecord
             p "#{existing_res}"
             p errors
             p self.errors
-            return if existing_res > 0
+            return if existing_res == 0
             self.errors[:base] << 'It looks like you have already reserved for this time'
     end
 

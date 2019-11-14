@@ -4,6 +4,7 @@ import RestaurantDetail from './restaurant_detail';
 import { fetchRestaurant } from '../../actions/restaurant_actions';
 import { createReservation, fetchReservation } from '../../actions/reservation_actions';
 import { openModal } from '../../actions/modal_actions'; 
+import { clearErrors } from '../../actions/reservation_actions';
 
 const msp = (state, ownProps) => ({
     restaurant: state.entities.restaurants[ownProps.match.params.restaurantId],
@@ -14,6 +15,7 @@ const msp = (state, ownProps) => ({
 
 const mdp = dispatch => ({
     fetchRestaurant: (restaurantId) => dispatch(fetchRestaurant(restaurantId)),
+    clearErrors: () => dispatch(clearErrors()),
     createReservation: (reservation) => dispatch(createReservation(reservation)),
     fetchReservation: (reservationId) => dispatch(fetchReservation(reservationId)),
     openModal: modal => dispatch(openModal(modal))
