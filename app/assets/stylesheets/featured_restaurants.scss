@@ -19,7 +19,7 @@
 
 .featured-restaurant-item-container {
     display: inline-block;
-    height: 250px;
+    height: 280px;
     text-align: center;
     // padding: 0 2rem;
     margin: 0 3rem;
@@ -29,15 +29,6 @@
 
 .featured-restaurant-item-container:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, .2);
-}
-
-.home-page-restaurant-name {
-    height: 40px;
-    width: 300px;
-    padding-top: .85rem;
-    font-weight: 1000;
-    font-family: 'Source Sans Pro', sans-serif;
-    // border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .featured-restaurant-icon-parent {
@@ -52,5 +43,21 @@
     object-fit: cover;
     height: 200px;
     width: 300px;
-    
+}
+
+.home-page-restaurant-name {
+    height: 60px;
+    width: 300px;
+    padding-top: .85rem;
+    font-weight: 1000;
+    font-family: 'Source Sans Pro', sans-serif;
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.featured-restaurant-name {
+    font-size: 18px;
+}
+
+.featured-restaurant-neighborhood {
+    font-size: 15px;
 }

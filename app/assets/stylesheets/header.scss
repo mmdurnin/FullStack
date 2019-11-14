@@ -84,11 +84,6 @@
     width: 200px;
 }
 
-.greeting-loggedin-session-nav h1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
 
 .greeting-loggedin-session-nav > * {
     width: 75px;
@@ -96,6 +91,14 @@
     border-radius: 6%;
     text-align: center;
     font-size: 16px;
+    margin: .2em;
+}
+
+.greeting-loggedin-session-nav h1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
 }
 
 .button-greeting-signup {

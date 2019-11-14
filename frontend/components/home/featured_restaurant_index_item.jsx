@@ -12,7 +12,10 @@ class FeaturedRestaurantIndexItem extends React.Component{
                 <div className="featured-restaurant-icon-parent">
                     <Link className="featured-restaurant-icon-child" to={`/restaurants/${this.props.restaurant.id}`}><img src={this.props.restaurant.image}/></Link>
                 </div>
-                <div className="home-page-restaurant-name">{this.props.restaurant.name}</div>
+                <div className="home-page-restaurant-name">
+                    <div className="featured-restaurant-name">{this.props.restaurant.name}</div>
+                    <div className="featured-restaurant-neighborhood">{this.props.restaurant.neighborhood}</div>
+                </div>
             </div>
         )
     }
