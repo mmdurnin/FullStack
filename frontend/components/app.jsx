@@ -8,6 +8,7 @@ import {
 
 import Modal from './modal/modal'
 import Header from './header/header';
+import Footer from './footer/footer';
 import HomeContainer from './home/home_container';
 import RestaurantDetailContainer from './restaurants/restaurant_detail_container';
 import RestaurantIndexContainer from './restaurants/restaurant_index_container';
@@ -23,6 +24,7 @@ const App = () => (
             <Route path="/restaurants" component={RestaurantIndexContainer} />
             <Route path="/" component={HomeContainer} />
         </Switch>
+        <Footer />
     </div>
 );
 

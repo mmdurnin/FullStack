@@ -11,7 +11,7 @@
     flex-wrap: wrap;
     overflow-x: auto;
 
-    margin: 20px;
+    margin: 20px auto;
 
     height: auto;
     // width: 93%;
@@ -22,8 +22,10 @@
     height: 280px;
     text-align: center;
     // padding: 0 2rem;
-    margin: 0 3rem;
-    margin-bottom: .85rem;
+    // margin: 0 5rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 1.5rem;
     border: 2px solid rgba(0, 0, 0, 0.12);
 }
 

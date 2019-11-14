@@ -16,6 +16,18 @@ class Api::ReviewsController < ApplicationController
             render :index
         else
             render json: @review.errors.full_messages
+        end
+    end
+
+    def destroy
+        @review = Review.find_by(id: params[:id])
+        if @review.user_id != current_user.id 
+            render json: ["Oops! This isn't your review"]
+            return 
+        end
+
+        @review.destroy
+        render json: @review.id
     end
 
     private
