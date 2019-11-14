@@ -13,6 +13,7 @@ const ReservationErrorsReducer = (state=_nullErrors, action) => {
         case(RECEIVE_RESERVATIONS):
             return _nullErrors
         case(CLEAR_ERRORS):
+            console.log("clear_errors action was hit")
             return _nullErrors;
         default:
             return state;

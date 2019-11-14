@@ -14,7 +14,10 @@ const msp = (state, ownProps) => ({
 })
 
 const mdp = dispatch => ({
-    fetchRestaurant: (restaurantId) => dispatch(fetchRestaurant(restaurantId)),
+    fetchRestaurant: (restaurantId) => {
+        dispatch(fetchRestaurant(restaurantId))
+        dispatch(clearErrors())
+    },
     clearErrors: () => dispatch(clearErrors()),
     createReservation: (reservation) => dispatch(createReservation(reservation)),
     fetchReservation: (reservationId) => dispatch(fetchReservation(reservationId)),
