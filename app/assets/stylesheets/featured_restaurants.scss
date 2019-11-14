@@ -51,13 +51,21 @@
     padding-top: .85rem;
     font-weight: 1000;
     font-family: 'Source Sans Pro', sans-serif;
-    // border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-left: .85rem;
+    box-sizing: border-box;
 }
 
 .featured-restaurant-name {
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 200;
 }
 
 .featured-restaurant-neighborhood {
     font-size: 15px;
+    color: gray;
 }
