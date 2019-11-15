@@ -50,19 +50,53 @@
     height: 100%;
     width: 100%;
 }
-.restaurant-show-header {
+
+.restaurant-show-header-grandparent {
     position: relative;
-    box-sizing: border-box;
+}
+
+#show-header-purple-screen {
+    position: absolute;
+    margin: 1px;
     width: 100%;
     height: 300px;
-    padding: 0vw 0vw;
+    text-align: center;
+    background-color:rgba(33, 2, 60, 0.4);
+    z-index: 2;
+}
+
+.restaurant-show-header {
+    margin: 1px;
+    width: 100%;
+    height: 450px;
+}
+
+.restaurant-show-header img {
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    text-align: center;
+    padding: 0px;
+    border: none;
+    background: #fff;
+    object-fit: cover;
     z-index: 1;
-    background-color: lightpink;
+    
+    // position: absolute;
+    // box-sizing: border-box;
+    // width: 100%;
+    // height: 300px;
+    // padding: 0vw 0vw;
+    // z-index: 1;
+
+
+    // background-color: lightpink;
 
     // background-size: cover;
     // background-repeat: no-repeat;
     // // background-position: center 25%;
     // background-position: cover;
+    // position: relative;
 }
 
 .restaurant-show-header img {

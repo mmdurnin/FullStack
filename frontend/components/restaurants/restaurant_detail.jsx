@@ -26,8 +26,11 @@ class RestaurantDetail extends React.Component{
         return(
             <div className="restaurant-show-window">
 
-                <div className="restaurant-show-header">
-                    {/* <img src={window.background_show} alt=""/> */}
+                <div className="restaurant-show-header-grandparent">
+                    <div id="show-header-purple-screen"></div>
+                    <div className="restaurant-show-header">
+                        <img src={window.background_show} />
+                    </div>
                 </div>
 
                 <div className="restaurant-show-page">
