@@ -1,0 +1,107 @@
+.review-index-container {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // height: fit-content;
+    height: 300px;
+    width: 100%;
+    padding: .85rem .85rem;
+    border: 3px solid hotpink;
+}
+
+.review-form-container-parent{
+    box-sizing: border-box;
+
+    height: fit-content;
+    width: 100%;
+    padding: .85rem .85rem;
+}
+
+.review-form-container-child {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.submittext-review-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: .85em;
+}
+
+.review-form-container-child h1 {
+    font-size: 20px;
+}
+
+.review-form-stars {
+    box-sizing: border-box;
+    // margin-top: 40px;
+    border: none;
+    float: left;
+}
+
+.review-form-stars > label {
+    color: #90A0A3;
+    float: right;
+}
+
+.review-form-stars > label:before {
+    margin: 5px;
+    font-size: 2em;
+    font-family: FontAwesome;
+    content: "\f005";
+    display: inline-block;
+}
+
+.review-form-stars > input {
+    display: none;
+}
+
+.review-form-stars > input:checked ~ label,
+.review-form-stars:not(:checked) > label:hover,
+.review-form-stars:not(:checked) > label:hover ~ label {
+    color: #F79426
+}
+
+.review-form-stars > input:checked + label:hover,
+.review-form-stars > input:checked ~ label:hover,
+.review-form-stars > label:hover ~ input:checked ~ label,
+.review-form-stars > input:checked ~ label:hover ~ label {
+    color: #FECE31
+}
+
+.review-text {
+    height: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.submittext-review-container textarea {
+    width: 100%;
+    height: 100%;
+    padding: .85em;
+    border-radius: 3px;
+    resize: none;
+    text-align: left;
+}
+
+.submittext-review-container > input {
+    margin-top: .85em;
+}
+
+.submit-review {
+    text-align: center;
+    height: 50px;
+    border-radius: 3px;
+    background-color: rgb(218,55,66);
+    color: rgb(255,255,255);
+}

@@ -20,6 +20,7 @@
  *= restaurant_index
  *= restaurant_show_page
  *= profile
+ *= reviews
  *= restaurant_show_navbar
  *= require_tree .
  *= require_self

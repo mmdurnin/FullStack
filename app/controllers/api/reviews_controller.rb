@@ -1,5 +1,7 @@
 class Api::ReviewsController < ApplicationController
-
+    
+    before_action :require_login, only: [:create]
+    
     def index
         @restaurant = Restaurant.find_by(id: params[:restaurant_id])
         @reviews = Review.includes(:user).where(restaurant_id: params[:restaurant_id])
@@ -7,12 +9,13 @@ class Api::ReviewsController < ApplicationController
     end
 
     def create
-        before_action :require_login
         @review = Review.new(review_params)
         @review.user_id = current_user.id
         @user = User.find_by(id: @review.user_id)
 
         if @review.save
+            @restaurant = Restaurant.find_by(id: params[:restaurant_id])
+            @reviews = Review.includes(:user).where(restaurant_id: params[:restaurant_id])
             render :index
         else
             render json: @review.errors.full_messages
