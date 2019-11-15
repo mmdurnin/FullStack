@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewIndexItem from './review_index_item'
 
 class ReviewIndex extends React.Component {
     constructor(props){
@@ -9,15 +10,23 @@ class ReviewIndex extends React.Component {
         this.props.fetchReviews(this.props.restaurant.id)
     }
 
+    // componentDidUpdate(){
+
+    // }
+
     render() {
-        // if (this.props.reviews.length === 0) return null;
-
-        
-
+        if (this.props.reviews.length === 0) return null;
+        console.log(this.props)
         return(
 
             <div className="review-index-container">
-                <div><div><div></div></div></div>
+                <ul>
+                    {
+                        this.props.reviews.map((el, i) => {
+                            <ReviewIndexItem key={i} review={el} restaurant={this.props.restaurant} />
+                        })
+                    }
+                </ul>
             </div>
 
         )
