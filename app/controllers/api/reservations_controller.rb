@@ -26,8 +26,6 @@ class Api::ReservationsController < ApplicationController
 
         @reservation.user_id = current_user.id
         @reservation.starts_at = reservation_params[:starts_at].to_datetime
-        
-        # debugger
 
         if @reservation.save
             @reservation_date = @reservation.starts_at.strftime("%B/%d/%Y")

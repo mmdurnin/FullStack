@@ -26,7 +26,9 @@ export const fetchReviews = (restaurantId) => dispatch => {
 
 export const createReview = (review, restaurantId) => dispatch => {
     return ReviewAPIUtil.createReview(review, restaurantId)
-        .then((review) => dispatch(receiveReview(review)))
+        .then((review) => {
+            dispatch(receiveReview(review))
+        })
 }
 
 export const deleteReview = (reviewId, restaurantId) => dispatch => {

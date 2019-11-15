@@ -18,7 +18,7 @@ class ReviewIndex extends React.Component {
 
     render() {
         if (this.props.reviews.length === 0) return null;
-        console.log(this.props)
+
         return(
 
             <div className="review-index-container">
