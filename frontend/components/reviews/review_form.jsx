@@ -26,6 +26,7 @@ class ReviewForm extends React.Component {
                 rating: "",
                 body: ""
         });
+        this.props.fetchReviews(this.props.restaurantId)
     }
 
     render(){

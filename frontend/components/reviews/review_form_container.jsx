@@ -9,7 +9,8 @@ const msp = (state, ownProps) => {
 }
 
 const mdp = dispatch => ({
-    createReview: (restaurantId) => dispatch(createReview(restaurantId))
+    createReview: (review, restaurantId) => dispatch(createReview(review, restaurantId)),
+    fetchReviews: (restaurantId) => dispatch(fetchReviews(restaurantId))
 })
 
 export default connect(msp, mdp)(ReviewForm);

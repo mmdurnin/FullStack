@@ -4,7 +4,7 @@ class Api::ReviewsController < ApplicationController
     
     def index
         @restaurant = Restaurant.find_by(id: params[:restaurant_id])
-        @reviews = Review.includes(:user).where(restaurant_id: params[:restaurant_id])
+        @reviews = Review.includes(:user).where(restaurant_id: params[:restaurant_id])    
         render :index
     end
 

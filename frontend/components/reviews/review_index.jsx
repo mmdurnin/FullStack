@@ -10,8 +10,10 @@ class ReviewIndex extends React.Component {
         this.props.fetchReviews(this.props.restaurant.id)
     }
 
-    // componentDidUpdate(){
-
+    // componentDidUpdate(prevProps){
+    //     if (this.props.reviews.length !== prevProps.reviews.length) {
+    //         this.props.fetchReviews(this.props.restaurant.id)
+    //     }
     // }
 
     render() {
@@ -23,7 +25,7 @@ class ReviewIndex extends React.Component {
                 <ul>
                     {
                         this.props.reviews.map((el, i) => {
-                            <ReviewIndexItem key={i} review={el} restaurant={this.props.restaurant} />
+                            return <ReviewIndexItem key={i} review={el} restaurant={this.props.restaurant} />
                         })
                     }
                 </ul>
