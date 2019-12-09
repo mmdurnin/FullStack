@@ -8,6 +8,10 @@ class Api::ReviewsController < ApplicationController
         render :index
     end
 
+    def user_reviews
+        @reviews = current_user.reviews.includes(:restaurant).order(created_at: :desc)
+    end
+
     def create
         @review = Review.new(review_params)
         @review.user_id = current_user.id

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     match '/restaurants/featured', to: 'restaurants#featured', via: :get
+    match '/reviews/user_reviews', to: 'reviews#user_reviews', via: :get
 
     resource :session, only:[:create, :destroy, :show]
     resources :cities, only:[:index]
