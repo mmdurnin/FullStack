@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ReviewForm from './review_form';
 import { createReview, fetchReviews } from '../../actions/review_actions';
+import { openModal } from '../../actions/modal_actions';
 
 
 const msp = (state, ownProps) => {

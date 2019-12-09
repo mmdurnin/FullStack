@@ -21,6 +21,8 @@ class ReviewForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
+        if (this.state.rating === "" || this.state.body === "") return
+        
         if (this.props.loggedIn) {
             this.props.createReview({ restaurant_id: this.state.restaurant_id, rating: this.state.rating, body: this.state.body }, this.props.restaurantId)
             this.setState({
