@@ -1,5 +1,6 @@
 import React from 'react';
 import UserReservations from './user_reservations/user_reservations_container';
+import UserReviews from './user_reviews/user_reviews_container';
 
 class UserProfile extends React.Component{
     constructor(props){
@@ -9,16 +10,21 @@ class UserProfile extends React.Component{
     }
 
     selectTab(e, tabNum) {
-        console.log("tab was selected")
-        this.setState({ selectedTab: tabNum })
 
         const prev = document.querySelector(".active")
         prev.classList.remove("active")
         e.target.classList.add("active")
+
+        this.setState({ tab: tabNum })
     }
 
     render() {
         if (this.props.user === undefined) return null;
+
+        const currentPageArr = [
+            <UserReservations />,
+            <UserReviews />
+        ]
 
         return(
             <div className="profile-page-window-container">
@@ -30,7 +36,7 @@ class UserProfile extends React.Component{
                         {/* <button onClick={this.selectTab(2)} id="profile-greeting-nav" className="active" >RESERVATIONS</button> */}
                     </div>
                 </div>
-                <UserReservations />
+                <div>{currentPageArr[this.state.tab]}</div>
             </div>
         )
     }

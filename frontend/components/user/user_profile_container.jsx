@@ -10,7 +10,6 @@ const msp = (state) => {
 }}
 
 const mdp = dispatch => ({
-    fetchUserReviews: () => dispatch(fetchUserReviews())
 })
 
 export default connect (msp, mdp)(UserProfile);
