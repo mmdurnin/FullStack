@@ -55,9 +55,9 @@ class ReservationDetail extends React.Component {
 
         return(
             <div>
-                <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}><div className="user-profile-res-restaurant-name">{this.props.reservation.restaurant_name}</div></Link>
-                <div className="user-profile-reservation-overview">
-                    <div className="user-profile-reservation-overview-sections">
+                <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}><div className="user-profile-restaurant-name">{this.props.reservation.restaurant_name}</div></Link>
+                <div className="user-profile-tabitem-overview">
+                    <div className="user-profile-tabitem-overview-sections">
                         <div className="user-profile-res-partyof">{this.props.user.name}, party of: {this.props.reservation.num_guests}</div>
                         <div className="user-profile-res-contact">Retaurant contact info:</div>
                         <div className="user-profile-res-contact">{this.props.reservation.restaurant_phone}</div>

@@ -22,7 +22,7 @@ class UserReservations extends React.Component {
                         this.props.reservations.reverse().map((el, i) => {
                             return <li key={i} className="profile-sub-container">
                                 <img src={el.restaurant_image} alt="" />
-                                <div className="profile-res-info">
+                                <div className="profile-tabitem-info">
                                     <ReservationDetail
                                         reservation={el}
                                         user={this.props.user}

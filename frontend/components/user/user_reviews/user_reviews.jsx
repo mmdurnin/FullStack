@@ -1,4 +1,5 @@
 import React from 'react';
+import UserReviewDetail from '../../reviews/user_review_detail';
 
 class UserReviews extends React.Component {
     constructor(props) {
@@ -12,37 +13,24 @@ class UserReviews extends React.Component {
     render () {
 
         if (this.props.reviews === undefined) return null;
-        
-        const ratings = {
-            1: <div><i class="fas fa-star"></i></div>,
-            2: <div>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>,
-            3: <div>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>,
-            4: <div>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>,
-            5: <div>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-        };
 
         console.log(this.props)
 
     return(
-        <div></div>
+        <div>
+            <ul className="profile-sub-container-parent">
+                {
+                    this.props.reviews.map((el, i) => {
+                        return <li key={i} className="profile-sub-container">
+                            <img src={el.restaurant_image} alt="" />
+                            <div className="profile-tabitem-info">
+                                <UserReviewDetail review={el} />
+                            </div>
+                        </li>
+                    })
+                }
+            </ul>
+        </div>
     )}
 }
 

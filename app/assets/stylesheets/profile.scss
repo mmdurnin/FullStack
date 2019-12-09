@@ -87,7 +87,7 @@ button {
     border: 2px solid rgb(247,247,247);
 }
 
-.profile-res-info {
+.profile-tabitem-info {
     margin: 1.5rem 1.5rem;
     // padding: 1rem 1rem;
     border: 2px solid rgb(247,247,247);
@@ -95,7 +95,7 @@ button {
     width: 100%;
 }
 
-.user-profile-res-restaurant-name {
+.user-profile-restaurant-name {
     flex-shrink: 1;
     background-color: rgb(255,255,255);
     // width: 100%;
@@ -107,7 +107,7 @@ button {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-.user-profile-reservation-overview {
+.user-profile-tabitem-overview {
     padding: .85rem 2rem;
     display: flex;
     flex-direction: row;
@@ -115,11 +115,11 @@ button {
     font-family: 'Varela Round', sans-serif;
 }
 
-.user-profile-reservation-overview > div {
+.user-profile-tabitem-overview > div {
     padding-right: 2rem;
 }
 
-.user-profile-reservation-overview-sections > div {
+.user-profile-tabitem-overview-sections > div {
     padding-bottom: .85rem;
     display: flex;
     flex-direction: column;
@@ -221,4 +221,15 @@ button {
 
 .delete-reservation:hover {
     background-color: rgb(218, 55, 66);
+}
+
+.review-item-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.profile-review-body {
+    font-style: italic;
 }
