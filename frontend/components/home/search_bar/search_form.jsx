@@ -33,8 +33,7 @@ class SearchForm extends React.Component{
         if (this.state.city !== "") {
             cityId = this.state.city
         }
-        console.log("this.state.date")
-        console.log(this.state.date)
+
         this.props.history.push(`/restaurants?city_id=${cityId}&time=${this.state.time}&guests=${this.state.numPeople}&date=${this.state.date}&restaurant=${this.state.restaurant}`)
     }
 

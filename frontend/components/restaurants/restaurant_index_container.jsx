@@ -8,10 +8,7 @@ import { fetchCities } from '../../actions/city_actions';
 
 const msp = (state, ownProps) => {
 
-    console.log("own props")
-    console.log(ownProps)
-    console.log("state.entities.cities")
-    console.log(state.entities.cities)
+
     let values = queryString.parse(ownProps.location.search)
     
     return {

@@ -36,10 +36,7 @@ class RestaurantIndex extends React.Component{
             guests = `Party of ${guests}`
         }
 
-        console.log("this.props.guests")
-        console.log(this.props.guests)
-        console.log("this.props")
-        console.log(this.props)
+
         return(
             <div className="restaurant-index-window-container">
 
