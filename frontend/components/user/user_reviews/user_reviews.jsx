@@ -14,8 +14,6 @@ class UserReviews extends React.Component {
 
         if (this.props.reviews === undefined) return null;
 
-        console.log(this.props)
-
     return(
         <div>
             <ul className="profile-sub-container-parent">

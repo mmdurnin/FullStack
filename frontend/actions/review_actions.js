@@ -25,7 +25,6 @@ export const fetchReviews = (restaurantId) => dispatch => {
 };
 
 export const fetchUserReviews = () => dispatch => {
-    console.log("fetching user reviews")
     return ReviewAPIUtil.fetchUserReviews()
         .then((reviews) => dispatch(receiveReviews(reviews)))
 };

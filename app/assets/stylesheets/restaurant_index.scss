@@ -1,5 +1,6 @@
 .restaurant-index-page-container {
     margin-top: 25px;
+    padding-right: 10vw;
     position: relative;
     box-sizing: border-box;
     display: flex;
@@ -8,8 +9,8 @@
 }
 
 .restaurant-index-navbar-container {
-    width: 200px;
-    margin-right: 3%;
+    width: 10vw;
+    margin-right: 5vw;
 }
 
 .sticky-navbar {
@@ -25,9 +26,17 @@
 }
 
 .price-buttons {
+    border-radius: 4px;
+    margin: .85em 0;
+    width: 100%;
+
     display: flex;
     flex-direction: row;
-    border-radius: 4px;
+    align-items: stretch;
+    button {
+        border: 1px solid rgba(154, 145, 145, 0.5);
+        flex: 1 1;
+    }
 }
 
 .price-filter-container button {
@@ -37,9 +46,20 @@
 }
 
 .cuisine-filter {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    
     width: 100%;
     padding: .875rem 0;
     border-bottom: 1px solid rgb(204,211,222);
+
+
+    img {
+        height: 20px;
+        width: 20px;
+        margin: 0 .4em;
+    }
 }
 
 @media screen and (max-width: 1000px) {

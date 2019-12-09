@@ -59,7 +59,8 @@ class RestaurantIndex extends React.Component{
                                 </div>
                             </div>
                             <div className="cuisine-filter">
-                                Cuisine:
+                                <img src={window.cuisineIcon} />
+                                <div>Cuisine:</div>
                             </div>
                         </div>
                     </div>
