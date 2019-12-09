@@ -1,6 +1,7 @@
 class Reservation < ApplicationRecord
     validates :restaurant_id, :user_id, :starts_at, :num_guests, presence: true
     validate :existing_res
+    validate :future_date
 
     belongs_to :restaurant,
         primary_key: :id,
@@ -25,6 +26,11 @@ class Reservation < ApplicationRecord
             p self.errors
             return if existing_res == 0
             self.errors[:base] << 'It looks like you have already reserved for this time'
+    end
+
+    def future_date
+        return if starts_at > Date.today
+        self.errors[:base] << 'Please select a future reservation date!'
     end
 
 end

@@ -30,7 +30,6 @@ class ReviewForm extends React.Component {
         } else {
             this.props.openModal('login')
         }
-        // this.props.fetchReviews(this.props.restaurantId)
     }
 
 
