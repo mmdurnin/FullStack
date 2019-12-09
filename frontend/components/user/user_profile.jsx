@@ -1,46 +1,36 @@
 import React from 'react';
-import ReservationDetail from '../reservations/reservation_detail';
+import UserReservations from './user_reservations/user_reservations_container';
 
 class UserProfile extends React.Component{
     constructor(props){
         super(props)
+
+        this.state = {tab: 0}
     }
 
-    componentDidMount() {
-        this.props.fetchReservations();
+    selectTab(e, tabNum) {
+        console.log("tab was selected")
+        this.setState({ selectedTab: tabNum })
+
+        const prev = document.querySelector(".active")
+        prev.classList.remove("active")
+        e.target.classList.add("active")
     }
 
     render() {
-
-        if (this.props.reservations === []) return null;
         if (this.props.user === undefined) return null;
-
 
         return(
             <div className="profile-page-window-container">
                 <div className="profile-greeting-container">
                     <div className="profile-greeting">{this.props.user.name}</div>
                     <div className="profile-greeting-nav">
-                        <div id="profile-greeting-nav">RESERVATIONS</div>
+                        <button onClick={(e) => this.selectTab(e, 0)} id="profile-greeting-nav" className="active" >RESERVATIONS</button>
+                        <button onClick={(e) => this.selectTab(e, 1)} id="profile-greeting-nav" >REVIEWS</button>
+                        {/* <button onClick={this.selectTab(2)} id="profile-greeting-nav" className="active" >RESERVATIONS</button> */}
                     </div>
                 </div>
-                <ul className="profile-sub-container-parent">
-                    {
-                        this.props.reservations.reverse().map((el, i) => {
-                            return <li key={i} className="profile-sub-container">
-                                        <img src={el.restaurant_image} alt=""/>
-                                        <div className="profile-res-info">
-                                            <ReservationDetail
-                                            reservation={el}
-                                            user={this.props.user}
-                                            deleteReservation={this.props.deleteReservation}
-                                            updateReservation={this.props.updateReservation}
-                                            />
-                                        </div>
-                                    </li>
-                        })
-                    }
-                </ul>
+                <UserReservations />
             </div>
         )
     }

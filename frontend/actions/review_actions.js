@@ -24,14 +24,19 @@ export const fetchReviews = (restaurantId) => dispatch => {
         .then((reviews) => dispatch(receiveReviews(reviews)))
 };
 
+export const fetchUserReviews = () => dispatch => {
+    return ReviewAPIUtil.fetchUserReviews()
+        .then((revieiws) => dispatch(receiveReviews(reviews)))
+};
+
 export const createReview = (review, restaurantId) => dispatch => {
     return ReviewAPIUtil.createReview(review, restaurantId)
         .then((review) => {
             dispatch(receiveReview(review))
         })
-}
+};
 
 export const deleteReview = (reviewId, restaurantId) => dispatch => {
     return ReviewAPIUtil.deleteReview(reviewId, restaurantId)
         .then((reviewId) => dispatch(removeReview(reviewId)))
-}
+};

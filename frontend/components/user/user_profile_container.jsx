@@ -1,18 +1,16 @@
 
 import { connect } from 'react-redux';
 import UserProfile from './user_profile';
-import { fetchReservations, deleteReservation, updateReservation } from '../../actions/reservation_actions';
+
 
 const msp = (state) => {
     return {
-    reservations: Object.values(state.entities.reservations),
-    user: state.entities.users[state.session.id]
+    user: state.entities.users[state.session.id],
+    reviews: state.entities.reviews
 }}
 
 const mdp = dispatch => ({
-    fetchReservations: () => dispatch(fetchReservations()),
-    deleteReservation: (reservationId) => dispatch(deleteReservation(reservationId)),
-    updateReservation: (reservation) => dispatch(updateReservation(reservation))
+    fetchUserReviews: () => dispatch(fetchUserReviews())
 })
 
 export default connect (msp, mdp)(UserProfile);

@@ -26,6 +26,10 @@
     font-weight: 180;
 }
 
+button {
+    border: none;
+}
+
 .profile-greeting-nav {
     box-sizing: border-box;
     background-color: rgb(255,255,255);
@@ -40,12 +44,16 @@
     color: rgb(34,123,152);
     font-size: 15px;
     padding: .875rem 0;
+    margin-right: .85em;
     display: inline-block;
     height: 100%;
     margin-top: 0px;
     margin-bottom: 0px;
-    border-bottom: 1px solid rgb(34,123,152);
     outline-offset: -2px;
+}
+
+.active {
+    border-bottom: 1px solid rgb(34,123,152);
 }
 
 #profile-greeting-nav:hover {
