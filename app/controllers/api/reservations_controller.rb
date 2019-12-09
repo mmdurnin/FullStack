@@ -2,7 +2,8 @@ class Api::ReservationsController < ApplicationController
     before_action :require_login
 
     def index
-        @reservations = current_user.reservations.includes(:restaurant).order(id: :desc)
+        @reservations_all = current_user.reservations.includes(:restaurant).order(id: :desc)
+        @reservations = @reservations_all.where('starts_at > ?', DateTime.now)
 
         render :index
     end
