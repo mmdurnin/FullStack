@@ -21,13 +21,19 @@ class ReviewForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.createReview({ restaurant_id: this.state.restaurant_id, rating: this.state.rating, body: this.state.body }, this.props.restaurantId)
-        this.setState({
+        if (this.props.loggedIn) {
+            this.props.createReview({ restaurant_id: this.state.restaurant_id, rating: this.state.rating, body: this.state.body }, this.props.restaurantId)
+            this.setState({
                 rating: "",
                 body: ""
-        });
+            });
+        } else {
+            this.props.openModal('login')
+        }
         // this.props.fetchReviews(this.props.restaurantId)
     }
+
+
 
     render(){
 
