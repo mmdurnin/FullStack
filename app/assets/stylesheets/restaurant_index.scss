@@ -57,6 +57,10 @@
         width: 15px;
         margin: 0 .2em;
     }
+
+    .row div {
+        font-weight: 900;
+    }
 }
 
 .cuisine-checkbox li{
@@ -64,6 +68,26 @@
     padding: .2em 0;
     label {
         padding-left: .5em;
+        font-size: 18px;
+        color: rgb(44,51,63);
+    }
+
+    input {
+        display: none;
+    }
+
+    .checkbox-disguise {
+        display: inline-block;
+        margin-right: .35em;
+        height: 13px;
+        width: 13px;
+        border-radius: 3px;
+        border: 2px solid rgb(150,153,159);
+        background-color: transparent;
+    }
+
+    input:checked ~ .checkbox-disguise {
+        background-color: rgb(218,55,67);
     }
 }
 

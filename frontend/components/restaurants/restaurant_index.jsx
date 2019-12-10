@@ -117,8 +117,11 @@ class RestaurantIndex extends React.Component{
                                     {
                                         cuisineChecks.map((el, i) => {
                                             return <li key={i}>
-                                                <input id={el} type="checkbox" value="false" onClick={(e) => this.handleCheck(e, el)} />
-                                                <label for={el}>{el}</label>
+                                                <label>
+                                                    <input id={el} type="checkbox" value="false" onClick={(e) => this.handleCheck(e, el)} />
+                                                    <span class="checkbox-disguise"></span>
+                                                    {el}
+                                                </label>
                                             </li>
                                         })
                                     }
