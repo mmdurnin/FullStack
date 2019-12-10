@@ -103,6 +103,11 @@
     margin: 0;
 }
 
+.greeting-loggedin-session-nav button {
+    border: 2px solid rgba(0, 0, 0, 0.12);
+    font-size: 18px;
+}
+
 .button-greeting-signup {
     background-color: rgb(35,123,152);
     color: rgb(232,240,254);
