@@ -46,9 +46,6 @@
 }
 
 .cuisine-filter {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
     
     width: 100%;
     padding: .875rem 0;
@@ -56,9 +53,17 @@
 
 
     img {
-        height: 20px;
-        width: 20px;
-        margin: 0 .4em;
+        height: 15px;
+        width: 15px;
+        margin: 0 .2em;
+    }
+}
+
+.cuisine-checkbox li{
+    list-style: none;
+    padding: .2em 0;
+    label {
+        padding-left: .5em;
     }
 }
 

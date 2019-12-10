@@ -21,3 +21,14 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 23px;
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}

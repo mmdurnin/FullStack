@@ -6,6 +6,11 @@ import queryString from 'query-string';
 class RestaurantIndex extends React.Component{
     constructor(props){
         super(props)
+
+        this.state = {price: "", cuisine: []}
+
+        this.handleCheck = this.handleCheck.bind(this);
+        this.handlePrice = this.handlePrice.bind(this);
     }
 
     componentDidMount() {
@@ -20,6 +25,25 @@ class RestaurantIndex extends React.Component{
         }
     }
 
+    handlePrice(event) {
+        return this.setState({ price: event.target.value })
+    }
+
+    handleCheck(event) {
+       if (event.target.checked) {
+           event.target.value = true
+           const tempArr = this.state.cuisine.concat(event.target.id)
+           this.setState({cuisine: tempArr})
+       } else {
+           const idx = this.state.cuisine.indexOf(event.target.id)
+           const tempArr = this.state.cuisine
+           delete tempArr[idx]
+           event.target.value = false
+           this.setState({cuisine: tempArr})
+       }
+       console.log(this.state)
+    }
+
     render(){
         if (this.props.restaurants === []) return null
         if (this.props.cities.length === 0) return null
@@ -31,10 +55,36 @@ class RestaurantIndex extends React.Component{
         let date = this.props.date || "";
         let guests = this.props.guests || "";
         let restaurant = this.props.restaurant || "";
+        let price = this.state.price
+        let cuisine = this.state.cuisine.join(" ")
+
 
         if (guests !== "") {
             guests = `Party of ${guests}`
         }
+
+        const cuisineChecks = [
+            "Burgers",
+            "Italian",
+            "Sushi",
+            "Greek",
+            "Has beer",
+            "Finger foods",
+            "French",
+            "Top rated",
+            "Sandwiches",
+            "Seafood",
+            "Casual",
+            "Breakfast",
+            "Mexican",
+            "Fried food",
+            "Southern comfort",
+            "Soup",
+            "Burmese",
+            "Ramen",
+            "Vegan",
+            "Gluten-free options"            
+        ];
 
 
         return(
@@ -53,14 +103,26 @@ class RestaurantIndex extends React.Component{
                             <div className="price-filter-container">
                                 Price:
                                 <div className="price-buttons">
-                                    <button>$$</button>
-                                    <button>$$$</button>
-                                    <button>$$$$</button>
+                                    <button value="$$" onClick={(e) => this.handlePrice(e)} >$$</button>
+                                    <button value="$$$" onClick={(e) => this.handlePrice(e)} >$$$</button>
+                                    <button value="$$$$" onClick={(e) => this.handlePrice(e)} >$$$$</button>
                                 </div>
                             </div>
-                            <div className="cuisine-filter">
-                                <img src={window.cuisineIcon} />
-                                <div>Cuisine:</div>
+                            <div className="cuisine-filter column">
+                                <div className="row">
+                                    <img src={window.cuisineIcon} />
+                                    <div>Cuisine:</div>
+                                </div>
+                                <form className="cuisine-checkbox column">
+                                    {
+                                        cuisineChecks.map((el, i) => {
+                                            return <li key={i}>
+                                                <input id={el} type="checkbox" value="false" onClick={(e) => this.handleCheck(e, el)} />
+                                                <label for={el}>{el}</label>
+                                            </li>
+                                        })
+                                    }
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -73,6 +135,9 @@ class RestaurantIndex extends React.Component{
                             <div className="search-results-parameter">{date}</div>
                             <div className="search-results-parameter">{guests}</div>
                             <div className="search-results-parameter">{restaurant}</div>
+                            <div className="search-results-parameter">{price}</div>
+                            <div className="search-results-parameter">{cuisine}</div>
+
                         </div>
                         {
                             this.props.restaurants.map((el, i) => {
