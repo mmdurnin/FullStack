@@ -15,7 +15,7 @@ import RestaurantIndexContainer from './restaurants/restaurant_index_container';
 import UserProfileContainer from './user/user_profile_container';
 
 const App = () => (
-    <div>
+    <div className="column">
         <Modal />
         <Header />
         <Switch>
