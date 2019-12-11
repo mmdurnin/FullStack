@@ -33,8 +33,8 @@ class Api::ReservationsController < ApplicationController
             @reservation_time = @reservation.starts_at.strftime("%I:%M %p")     
             render :show
         else
-            # p "create errors logic is working"
-            # p "#{@reservation.errors.full_messages}"
+            p "create errors logic is working"
+            p "#{@reservation.errors.messages}"
             render json: @reservation.errors.full_messages, status: 418
         end
     end

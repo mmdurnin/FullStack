@@ -45,8 +45,13 @@ export const fetchReservations = () => dispatch => {
 export const createReservation = (reservation) => dispatch => {
     return ReservationAPIUtil.createReservation(reservation)
         .then((reservation) => dispatch(receiveReservation(reservation)),
-        (errors) => dispatch(receiveErrors(errors.responseJSON)))
+        (errors) => {
+            console.log(errors)
+            return dispatch(receiveErrors(errors.responseJSON))
+        }
+    )
 }
+
 
 export const updateReservation = (reservation) => dispatch => {
     return ReservationAPIUtil.updateReservation(reservation)
