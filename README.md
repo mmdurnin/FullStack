@@ -21,10 +21,11 @@ Welcome to TableFor2! TableFor2 is a web application inspired by OpenTable. This
 
 
 ### <a id="Features-&-Highlights"></a>Features & Highlights ###
-**Public access to restaurant browsing via filtered and/or keyword search**
-**User-authenticated access to reservations**
-**User-authenticated access to restaurant reviews**
-**User profile featuring reservations and reviews**
+
+#### Public access to restaurant browsing via filtered and/or keyword search
+#### User-authenticated access to reservations**
+#### User-authenticated access to restaurant reviews**
+#### User profile featuring reservations and reviews**
 
 ### <a id="Technologies"></a>Technologies ###
 ### <a id="Installation"></a>Installation ###
