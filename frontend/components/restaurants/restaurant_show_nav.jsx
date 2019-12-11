@@ -25,7 +25,7 @@ class RestaurantShowNav extends React.Component{
 
                 <div className="navbar-item">
                     <div><img src={window.cuisineIcon} /></div>
-                    <div>(cuisine placeholder)</div>
+                    <div>Soup, Has beer, Casual, Burgers</div>
                 </div>
 
                 <div className="navbar-item">
