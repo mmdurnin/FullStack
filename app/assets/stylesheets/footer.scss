@@ -6,3 +6,21 @@
     margin-top: 40px;
     padding: none;
 }
+
+.footer-icon-circle {
+    background-color: rgba(240, 248, 255, 0.5);
+    color: rgb(51,51,51);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    padding: .2em;
+    box-sizing: border-box;
+}
+
+.footer-icon {
+    color: aliceblue;
+    opacity: .5;
+    font-size: 30px;
+}
