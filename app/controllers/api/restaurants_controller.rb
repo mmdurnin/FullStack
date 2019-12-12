@@ -1,7 +1,8 @@
 class Api::RestaurantsController < ApplicationController
 
     def index
-        @restaurants = Restaurant.where(city_id: params[:city_id]).where("name like '%#{params[:restaurant_name]}%'")
+        search_key = params[:restaurant_name].downcase
+        @restaurants = Restaurant.where(city_id: params[:city_id]).where("lower(name) like '%#{search_key}%'")
     end
 
     def show

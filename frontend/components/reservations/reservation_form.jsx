@@ -1,8 +1,4 @@
 import React from 'react';
-// import { connect } from 'react-redux';
-// import { createReservation, fetchReservation } from '../../actions/reservation_actions';
-// import { openModal } from '../../actions/modal_actions'; 
-// import {withRouter } from 'react-router-dom';
 
 class ReservationForm extends React.Component {
     constructor(props) {
