@@ -22,7 +22,7 @@ Welcome to TableFor2! TableFor2 is a web application inspired by OpenTable. This
   * [Responsive Design](#responsive)
 * [Technologies](#Technologies)
 * [Installation](#Installation)
-* [Seed Data Resources](#Seed-Sources)
+* [Credits](#Seed-Sources)
 * [Future Directions](#Future-Directions)
 
 
@@ -30,7 +30,12 @@ Welcome to TableFor2! TableFor2 is a web application inspired by OpenTable. This
 
 #### <a id="search"></a>Public access to restaurant browsing via filtered and/or keyword search ####
 
-<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_gifs/t.partial_search.gif" height="222" width="382" >  <img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_gifs/t.filtered_search.gif" height="222" width="445" >   
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_search_util.png" width="500" align="right" >
+__Search:__  The app's restaurant searchbar carries two parameters to the backend: city ID (with a default value of 1: San Francisco) and restaurant name (optional). 
+
+
+
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_gifs/t.partial_search.gif" height="222" width="382" alt="Keyword Search">  <img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_gifs/t.filtered_search.gif" height="222" width="445" alt="Search by city" >   
 
 #### <a id="reservations"></a>User-authenticated access to reservations ####
 #### <a id="reviews"></a>Restaurant ratings and reviews ####
@@ -50,7 +55,7 @@ This project was built using the following technologies:
 ### <a id="Installation"></a>Installation ###
 
 
-### <a id="Seed-Sources"></a>Seed Data Resources & Credits ###
+### <a id="Seed-Sources"></a>Seed Data Sources & Credits ###
 Fonts
 Icons
 Images
