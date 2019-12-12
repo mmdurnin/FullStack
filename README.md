@@ -38,11 +38,10 @@ Welcome to TableFor2! TableFor2 is a web application inspired by OpenTable. This
 
 The app's restaurant searchbar sends two parameters to the backend: city ID (with a default value of 1: San Francisco) and restaurant name (optional).  
 
-<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_search_util.png" width="100%" >    
-*API call to the restaurants controller*    
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_search_util.png" width="100%" > *API call to the restaurants controller*    
 
-<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_search_controller2.png" width="100%" >    
-*Index action on the restaurants controller*  
+
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_search_controller2.png" width="100%" > *Index action on the restaurants controller*    
 
 
 
