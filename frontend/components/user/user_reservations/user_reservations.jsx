@@ -28,6 +28,7 @@ class UserReservations extends React.Component {
                                         user={this.props.user}
                                         deleteReservation={this.props.deleteReservation}
                                         updateReservation={this.props.updateReservation}
+                                        errors={this.props.errors}
                                     />
                                 </div>
                             </li>

@@ -53,64 +53,98 @@ class ReservationDetail extends React.Component {
             }
         }
 
-        return(
-            <div>
-                <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}><div className="user-profile-restaurant-name">{this.props.reservation.restaurant_name}</div></Link>
-                <div className="user-profile-tabitem-overview">
-                    <div className="user-profile-tabitem-overview-sections">
-                        <div className="user-profile-res-partyof">{this.props.user.name}, party of: {this.props.reservation.num_guests}</div>
-                        <div className="user-profile-res-contact">Retaurant contact info:</div>
-                        <div className="user-profile-res-contact">{this.props.reservation.restaurant_phone}</div>
-                        <div className="user-profile-res-contact">{this.props.reservation.restaurant_address}</div>
-                        <div className="user-profile-res-contact">{this.props.reservation.restaurant_neighborhood}</div>
-                    </div>
-                    <div className="reservation-info-box">
-                        <div className="user-profile-reservation-date">
-                            <div>Reservation:</div>
-                            <div>{this.props.reservation.starts_at_date}</div>
-                            <div>{this.props.reservation.starts_at_time}</div>
-                        </div>
-                    </div>
-
-                    <div className="update-res-form">
-                        <form onSubmit={this.handleSubmit}>
-                            <input 
-                                className="update-party-size"
-                                type="number"
-                                onChange={this.update("num_guests")}
-                                value={this.state.num_guests}
-                                min="1"
-                                max="12" 
-                            />
-                            
-                            <input
-                            className="update-res-date"
-                            value={this.state.date}
-                            onChange={this.update("date")}
-                            type="date"
-                            />
-
-                            <select 
-                                className="update-time"
-                                value={this.state.time.value} 
-                                onChange={this.update("time")}>
-                                <option value="">{this.state.time}</option>
-                                {
-                                    timeOptions.map((el, i) => {
-                                        return <option key={i} value={el}>{el}</option>
-                                    })
-                                }
-                            </select>
-
-                            <input className="submit-update" type="submit" value="Update reservation"/>
-                        </form>
-                        <button className="delete-reservation" onClick={() => this.props.deleteReservation(this.props.reservation.id)}>Delete Reservation</button>
-                    </div>
-
-
+        return (
+          <div>
+            <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}>
+              <div className="user-profile-restaurant-name">
+                {this.props.reservation.restaurant_name}
+              </div>
+            </Link>
+            <div className="user-profile-tabitem-overview">
+              <div className="user-profile-tabitem-overview-sections">
+                <div className="user-profile-res-partyof">
+                  {this.props.user.name}, party of:{" "}
+                  {this.props.reservation.num_guests}
                 </div>
+                <div className="user-profile-res-contact">
+                  Retaurant contact info:
+                </div>
+                <div className="user-profile-res-contact">
+                  {this.props.reservation.restaurant_phone}
+                </div>
+                <div className="user-profile-res-contact">
+                  {this.props.reservation.restaurant_address}
+                </div>
+                <div className="user-profile-res-contact">
+                  {this.props.reservation.restaurant_neighborhood}
+                </div>
+              </div>
+              <div className="reservation-info-box">
+                <div className="user-profile-reservation-date">
+                  <div>Reservation:</div>
+                  <div>{this.props.reservation.starts_at_date}</div>
+                  <div>{this.props.reservation.starts_at_time}</div>
+                </div>
+                <div>
+                  <ul className="create-reservation-errors">
+                    {this.props.errors.map((error, i) => {
+                      return <li key={i}>{error}</li>;
+                    })}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="update-res-form">
+                <form onSubmit={this.handleSubmit}>
+                  <input
+                    className="update-party-size"
+                    type="number"
+                    onChange={this.update("num_guests")}
+                    value={this.state.num_guests}
+                    min="1"
+                    max="12"
+                  />
+
+                  <input
+                    className="update-res-date"
+                    value={this.state.date}
+                    onChange={this.update("date")}
+                    type="date"
+                  />
+
+                  <select
+                    className="update-time"
+                    value={this.state.time.value}
+                    onChange={this.update("time")}
+                  >
+                    <option value="">{this.state.time}</option>
+                    {timeOptions.map((el, i) => {
+                      return (
+                        <option key={i} value={el}>
+                          {el}
+                        </option>
+                      );
+                    })}
+                  </select>
+
+                  <input
+                    className="submit-update"
+                    type="submit"
+                    value="Update reservation"
+                  />
+                </form>
+                <button
+                  className="delete-reservation"
+                  onClick={() =>
+                    this.props.deleteReservation(this.props.reservation.id)
+                  }
+                >
+                  Delete Reservation
+                </button>
+              </div>
             </div>
-        )
+          </div>
+        );
     }
 }
 
