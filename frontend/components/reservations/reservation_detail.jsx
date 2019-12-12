@@ -53,6 +53,12 @@ class ReservationDetail extends React.Component {
             }
         }
 
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = (today.getMonth() + 1);
+        const day = today.getDate();
+        const minDate = `${year}-${month}-${day}`
+
         return (
           <div>
             <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}>
@@ -110,6 +116,7 @@ class ReservationDetail extends React.Component {
                     value={this.state.date}
                     onChange={this.update("date")}
                     type="date"
+                    min={minDate}
                   />
 
                   <select
