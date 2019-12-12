@@ -23,18 +23,26 @@ class Api::ReservationsController < ApplicationController
     end
 
     def create
+
         @reservation = Reservation.new(reservation_params)
 
         @reservation.user_id = current_user.id
-        @reservation.starts_at = reservation_params[:starts_at].to_datetime
 
-        if @reservation.save
+        if reservation_params[:starts_at][0] == " " #this is controllling for an instance where reservation params send up an empty date. Converting to datetime will default the empty value to date.today. Check for empty date by reservation_params[:starts_at] first character is " "
+            @reservation.starts_at = ""
+        else 
+            @reservation.starts_at = reservation_params[:starts_at].to_datetime
             @reservation_date = @reservation.starts_at.strftime("%B/%d/%Y")
-            @reservation_time = @reservation.starts_at.strftime("%I:%M %p")     
+            @reservation_time = @reservation.starts_at.strftime("%I:%M %p")
+        end
+
+        if @reservation_time == "12:00 AM" # this is controller for an empty time, which defaults to 12:00 AM (kinda hacky but we dont have an option for 12AM -- refactor later)
+            @reservation.starts_at = ""
+        end
+
+        if @reservation.save     
             render :show
         else
-            p "create errors logic is working"
-            p "#{@reservation.errors.messages}"
             render json: @reservation.errors.full_messages, status: 418
         end
     end

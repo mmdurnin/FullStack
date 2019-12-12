@@ -28,6 +28,7 @@ class ReservationForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let dateTime = `${this.state.date}` + ` ` + `${this.state.time}`
+        console.log(dateTime)
 
         if (this.props.loggedIn) {
             this.props.action({
@@ -72,7 +73,7 @@ class ReservationForm extends React.Component {
                         <div id="section">
                             <label className="res-dropdown">
                                  {/* <select value={this.state.num_guests.value} onChange={this.update("num_guests")}>
-                                    <option selected disabled value="">Party Size</option>
+                                    <option value="">Party Size</option>
                                     <option value="1">1 person</option>
                                     <option value="2">2 people</option>
                                     <option value="3">3 people</option>
@@ -112,7 +113,7 @@ class ReservationForm extends React.Component {
                             <label className="reservation-datetime">
                                 <div>Time:</div>
                                 <select value={this.state.time.value} onChange={this.update("time")}>
-                                    <option selected disabled value="">Select time</option>
+                                    <option value="">Select time</option>
                                     {
                                         timeOptions.map((el, i) => {
                                             return <option key={i} value={el}>{el}</option>

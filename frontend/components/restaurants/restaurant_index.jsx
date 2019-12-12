@@ -119,7 +119,7 @@ class RestaurantIndex extends React.Component{
                                             return <li key={i}>
                                                 <label>
                                                     <input id={el} type="checkbox" value="false" onClick={(e) => this.handleCheck(e, el)} />
-                                                    <span class="checkbox-disguise"></span>
+                                                    <span className="checkbox-disguise"></span>
                                                     {el}
                                                 </label>
                                             </li>

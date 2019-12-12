@@ -44,19 +44,19 @@ const Footer = () => (
             </div>
             <div className="footer-icons column">
                 <a href="https://angel.co/maureen-durnin?public_profile=1">
-                    <i class="footer-icon-circle fab fa-angellist"></i>
+                    <i className="footer-icon-circle fab fa-angellist"></i>
                     <h3>AngelList</h3>
                 </a>
                 <a href="https://www.linkedin.com/in/maureen-durnin-19b73a198/">
-                    <i class="footer-icon-circle fab fa-linkedin-in"></i>
+                    <i className="footer-icon-circle fab fa-linkedin-in"></i>
                     <h3>LinkedIn</h3>
                 </a>
                 <a href="https://github.com/mmdurnin">
-                    <i class="footer-icon fab fa-github"></i>
+                    <i className="footer-icon fab fa-github"></i>
                     <h3>GitHub</h3>
                     </a>
                 <a href="maureendurnin.com" >
-                    <i class="footer-icon fas fa-user-circle"></i>
+                    <i className="footer-icon fas fa-user-circle"></i>
                     <h3>Developer Portfolio</h3>
                 </a>
             </div>

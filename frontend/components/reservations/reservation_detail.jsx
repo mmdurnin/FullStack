@@ -94,7 +94,7 @@ class ReservationDetail extends React.Component {
                                 className="update-time"
                                 value={this.state.time.value} 
                                 onChange={this.update("time")}>
-                                <option disabled selected value="">{this.state.time}</option>
+                                <option value="">{this.state.time}</option>
                                 {
                                     timeOptions.map((el, i) => {
                                         return <option key={i} value={el}>{el}</option>
