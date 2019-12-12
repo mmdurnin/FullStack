@@ -12,7 +12,7 @@ class Api::ReservationsController < ApplicationController
         @reservation = current_user.reservations.includes(:restaurant).find_by(id: params[:id])
 
         if @reservation.nil?
-            render json: ["Oops! We couldn't find your reservation"]
+            render json: ["Oops! We couldn't find your reservation"], status: 418
             return
         end
 
@@ -51,24 +51,26 @@ class Api::ReservationsController < ApplicationController
         @reservation = Reservation.includes(:restaurant).find_by(id: params[:id])
 
         if @reservation.user_id != current_user.id 
-            render json: ["Oops! This isn't your reservation"]
+            render json: ["Oops! This isn't your reservation"], status: 418
             return 
         end
 
         @reservation.starts_at = reservation_params[:starts_at].to_datetime
 
         if @reservation.update_attributes(reservation_params)
+            "we found the bug"
             render :show
         else
+            p "reservation.errors.full messages"
             p "#{@reservation.errors.full_messages}"
-            render json: @reservation.errors.full_messages
+            render json: @reservation.errors.full_messages, status: 418
         end
     end
 
     def destroy
         @reservation = Reservation.find_by(id: params[:id])
         if @reservation.user_id != current_user.id 
-            render json: ["Oops! This isn't your reservation"]
+            render json: ["Oops! This isn't your reservation"], status: 418
             return 
         end
 
