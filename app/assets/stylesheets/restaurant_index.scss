@@ -23,6 +23,11 @@
     border-bottom: 1px solid rgb(204, 211, 222);
     display: flex;
     flex-direction: column;
+
+    h1 {
+        font-weight: 900;
+        padding-left: .35em;
+    }
 }
 
 .price-buttons {
@@ -58,6 +63,12 @@
         margin: 0 .2em;
     }
 
+    .row {
+        width: 100%;
+        justify-content: flex-start;
+        padding: .5em .35em;
+    }
+
     .row div {
         font-weight: 900;
     }
@@ -68,7 +79,7 @@
     padding: .2em 0;
     label {
         padding-left: .5em;
-        font-size: 18px;
+        font-size: 17px;
         color: rgb(44,51,63);
     }
 

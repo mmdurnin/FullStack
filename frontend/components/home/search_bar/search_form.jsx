@@ -63,6 +63,13 @@ class SearchForm extends React.Component{
             }
         }
 
+        //Create variable for date today
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = today.getMonth() + 1;
+        const day = today.getDate();
+        const minDate = `${year}-${month}-${day}`;
+
         return(
             <div >
                 <form className="search-form-parent" id="search-form-parent-collapsed" onSubmit={this.handleSubmit}>
@@ -89,6 +96,7 @@ class SearchForm extends React.Component{
                             onChange={this.update("date")}
                             placeholder="Select date"
                             type="date"
+                            min={minDate}
                             />
                         </label>
 

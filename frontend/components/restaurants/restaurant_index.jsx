@@ -87,71 +87,76 @@ class RestaurantIndex extends React.Component{
         ];
 
 
-        return(
-            <div className="restaurant-index-window-container">
-
-                <div className="index-search-bar-container" style={backgroundStyle}>
-                    <div className="index-search-bar-form">
-                        <SearchFormContainer />
-                    </div>
-                </div>
-
-                <div className="restaurant-index-page-container">
-
-                    <div className="restaurant-index-navbar-container">
-                        <div className="sticky-navbar">
-                            <div className="price-filter-container">
-                                Price:
-                                <div className="price-buttons">
-                                    <button value="$$" onClick={(e) => this.handlePrice(e)} >$$</button>
-                                    <button value="$$$" onClick={(e) => this.handlePrice(e)} >$$$</button>
-                                    <button value="$$$$" onClick={(e) => this.handlePrice(e)} >$$$$</button>
-                                </div>
-                            </div>
-                            <div className="cuisine-filter column">
-                                <div className="row">
-                                    <img src={window.cuisineIcon} />
-                                    <div>Cuisine:</div>
-                                </div>
-                                <form className="cuisine-checkbox column">
-                                    {
-                                        cuisineChecks.map((el, i) => {
-                                            return <li key={i}>
-                                                <label>
-                                                    <input id={el} type="checkbox" value="false" onClick={(e) => this.handleCheck(e, el)} />
-                                                    <span className="checkbox-disguise"></span>
-                                                    {el}
-                                                </label>
-                                            </li>
-                                        })
-                                    }
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="restaurant-list-container">
-                        <div className="dummie-search-results">
-                            <div className="search-results-guide">Your search:</div>
-                            <div className="search-results-parameter">{cityName}</div>
-                            <div className="search-results-parameter">{time}</div>
-                            <div className="search-results-parameter">{date}</div>
-                            <div className="search-results-parameter">{guests}</div>
-                            <div className="search-results-parameter">{restaurant}</div>
-                            <div className="search-results-parameter">{price}</div>
-                            <div className="search-results-parameter">{cuisine}</div>
-
-                        </div>
-                        {
-                            this.props.restaurants.map((el, i) => {
-                                return <RestaurantIndexItem key={i} restaurant={el} />
-                            })
-                        }
-                    </div>
-
-                </div>
+        return (
+          <div className="restaurant-index-window-container">
+            <div className="index-search-bar-container" style={backgroundStyle}>
+              <div className="index-search-bar-form">
+                <SearchFormContainer />
+              </div>
             </div>
-        )
+
+            <div className="restaurant-index-page-container">
+              <div className="restaurant-index-navbar-container">
+                <div className="sticky-navbar">
+                  <div className="price-filter-container">
+                    <h1>Price:</h1>
+                    <div className="price-buttons">
+                      <button value="$$" onClick={e => this.handlePrice(e)}>
+                        $$
+                      </button>
+                      <button value="$$$" onClick={e => this.handlePrice(e)}>
+                        $$$
+                      </button>
+                      <button value="$$$$" onClick={e => this.handlePrice(e)}>
+                        $$$$
+                      </button>
+                    </div>
+                  </div>
+                  <div className="cuisine-filter column">
+                    <div className="row">
+                      <img src={window.cuisineIcon} />
+                      <div>Cuisine:</div>
+                    </div>
+                    <form className="cuisine-checkbox column">
+                      {cuisineChecks.map((el, i) => {
+                        return (
+                          <li key={i}>
+                            <label>
+                              <input
+                                id={el}
+                                type="checkbox"
+                                value="false"
+                                onClick={e => this.handleCheck(e, el)}
+                              />
+                              <span className="checkbox-disguise"></span>
+                              {el}
+                            </label>
+                          </li>
+                        );
+                      })}
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div className="restaurant-list-container">
+                <div className="dummie-search-results">
+                  <div className="search-results-guide">Your search:</div>
+                  <div className="search-results-parameter">{cityName}</div>
+                  <div className="search-results-parameter">{time}</div>
+                  <div className="search-results-parameter">{date}</div>
+                  <div className="search-results-parameter">{guests}</div>
+                  <div className="search-results-parameter">{restaurant}</div>
+                  <div className="search-results-parameter">{price}</div>
+                  <div className="search-results-parameter">{cuisine}</div>
+                </div>
+                {this.props.restaurants.map((el, i) => {
+                  return <RestaurantIndexItem key={i} restaurant={el} />;
+                })}
+              </div>
+            </div>
+          </div>
+        );
     }
 }
 
