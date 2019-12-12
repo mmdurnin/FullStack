@@ -30,7 +30,7 @@ Welcome to TableFor2! TableFor2 is a web application inspired by OpenTable. This
 
 #### <a id="search"></a>Public access to restaurant browsing via filtered and/or keyword search ####
 
-<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_gifs/t.partial_search.gif" height="222" width="382" align="left" ><img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_gifs/t.filtered_search.gif" height="222" width="445" align="right" >   
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_gifs/t.partial_search.gif" height="222" width="382" >  <img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_gifs/t.filtered_search.gif" height="222" width="445" >   
 
 #### <a id="reservations"></a>User-authenticated access to reservations ####
 #### <a id="reviews"></a>Restaurant ratings and reviews ####
