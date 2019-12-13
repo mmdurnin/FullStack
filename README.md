@@ -92,7 +92,7 @@ The User Reservations tab triggers the fetch reservations action. On the reserva
             
 A future implementation will render both upcoming and past reservations, sorted into separate categories with an option for the user to leave a review on the restaurants in which they have previously "dined".
 
-
+User reviews require a custom Rails route
 
 
 ### <a id="errors"></a>Custom error handling ###
