@@ -10,12 +10,6 @@ class ReviewIndex extends React.Component {
         this.props.fetchReviews(this.props.restaurant.id)
     }
 
-    // componentDidUpdate(prevProps){
-    //     if (this.props.reviews.length !== prevProps.reviews.length) {
-    //         this.props.fetchReviews(this.props.restaurant.id)
-    //     }
-    // }
-
     render() {
         if (this.props.reviews.length === 0) return null;
 
