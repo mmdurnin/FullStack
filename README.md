@@ -47,7 +47,7 @@ The app's restaurant search bar sends two parameters to the backend: city ID (wi
 
 The index action includes an active record query for a matching city ID and any restaurant with a name that contains the search term, allowing for partial, case-insensitive search.
 
-<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_search_controller2.png" width="100%" > *Index action on the restaurants controller*    
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_search_controller_sanitized.png" width="100%" > *Index action on the restaurants controller*    
 
 <img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_frontend_query.png" width="60%" align="right" >    
 
