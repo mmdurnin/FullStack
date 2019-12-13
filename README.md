@@ -49,9 +49,11 @@ The index action includes an active record query for a matching city ID and any 
 
 <img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_search_controller2.png" width="100%" > *Index action on the restaurants controller*    
 
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_frontend_query.png" width="60%" align="right" >    
 
+The other search parameters are carried over directly to the restaurants index page. This is achieved by tacking a query string onto a route (/restaurants), defined on the App component.  A future implementation will include real reservation search.  
 
-
+*Search form component*
 
 ### <a id="reservations"></a>User-authenticated access to reservations ###
 ### <a id="reviews"></a>Restaurant ratings and reviews ###
@@ -82,3 +84,4 @@ Edit & delete reviews
 Restaurant filters by cuisine, neighborhood, and price
 Save restaurants 
 Create new restaurant ("for restauranteurs")
+Real reservation search (updates to seeds with reservation slots)
