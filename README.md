@@ -69,7 +69,9 @@ From the reservations summary page, a user also has access to updating and/or de
 
 <img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_gifs/create_review.gif" width="60%" align="left" >
 
-Also on the restaurant show page is a list of all reviews. The fetch reviews frontend action is triggered on mount of the component. The route to the reviews index action on the backend is nested under restaurants. As such, the AJAX call to fetch restaurants includes restaurant ID in the query string -- url: `/api/restaurants/${restaurantId}/reviews`, and the index action on the reviews controller filters reviews by restaurant ID. Each item on the list of restaurant reviews includes the name of the user who created the review. To limit the number of N + 1 queries to the database, the call to grab this batch of reviews "includes" user, which preloads associated user records.
+Also on the restaurant show page is a list of all reviews. The fetch reviews frontend action is triggered on mount of the component. The route to the reviews index action on the backend is nested under restaurants. As such, the AJAX call to fetch restaurants includes restaurant ID in the query string -- url: `/api/restaurants/${restaurantId}/reviews`, and the index action on the reviews controller filters reviews by restaurant ID. Each item on the list of restaurant reviews includes the name of the user who created the review. To limit the number of N + 1 queries to the database, the call to grab this batch of reviews "includes" user, which preloads associated user records (this prevents a call to the "users" database for every single review).
+
+The create review form exists on this same restaurant show page. If a user is not logged in on submitting the review form, the log in modal will open, preventing the user from submitting. Creating a new review triggers a state change, rerendering the list of reviews directly above the form which will then include the submitted review.
 
 ### <a id="profile"></a>User profile featuring reservations and reviews ###
 ### <a id="errors"></a>Custom error handling ###
