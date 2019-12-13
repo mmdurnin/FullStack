@@ -11,7 +11,7 @@ const Footer = () => (
             <div id="footer-section">
                 <ul>
                     <li>Inspiration: OpenTable</li>
-                    <li>Reviews: Yelp (Indianapolis)</li>
+                    <li>Restaurant Summaries: Yelp (Indianapolis)</li>
                     <li>Restaurant Names: Savor Japan</li>
                     <li>Photos: Pexels</li>
                     <li>Phone Numbers/ Addresses: Fake Number/Address Generator </li>

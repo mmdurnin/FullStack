@@ -11,8 +11,8 @@ class UserProfile extends React.Component{
 
     selectTab(e, tabNum) {
 
-        const prev = document.querySelector(".active")
-        prev.classList.remove("active")
+        const previousTab = document.querySelector(".active")
+        previousTab.classList.remove("active")
         e.target.classList.add("active")
 
         this.setState({ tab: tabNum })
@@ -27,13 +27,12 @@ class UserProfile extends React.Component{
         ]
 
         return(
-            <div className="profile-page-window-container">
-                <div className="profile-greeting-container">
+            <div className="profile-window">
+                <div className="full">
                     <div className="profile-greeting">{this.props.user.name}</div>
                     <div className="profile-greeting-nav">
-                        <button onClick={(e) => this.selectTab(e, 0)} id="profile-greeting-nav" className="active" >RESERVATIONS</button>
-                        <button onClick={(e) => this.selectTab(e, 1)} id="profile-greeting-nav" >REVIEWS</button>
-                        {/* <button onClick={this.selectTab(2)} id="profile-greeting-nav" className="active" >RESERVATIONS</button> */}
+                        <button onClick={(e) => this.selectTab(e, 0)} className="active" >RESERVATIONS</button>
+                        <button onClick={(e) => this.selectTab(e, 1)} >REVIEWS</button>
                     </div>
                 </div>
                 <div>{currentPageArr[this.state.tab]}</div>
@@ -43,7 +42,3 @@ class UserProfile extends React.Component{
 }
 
 export default UserProfile;
-
-
-{/* <div>{el.starts_at}</div>
-<div>{el.restaurant_name}</div> */}
