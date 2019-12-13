@@ -28,13 +28,16 @@ class SearchForm extends React.Component{
 
 
     handleSubmit(e) {
+        
         e.preventDefault();
-        let cityId = 1
-        if (this.state.city !== "") {
-            cityId = this.state.city
-        }
 
-        this.props.history.push(`/restaurants?city_id=${cityId}&time=${this.state.time}&guests=${this.state.numPeople}&date=${this.state.date}&restaurant=${this.state.restaurant}`)
+        let cityId = this.state.city ? this.state.city : 1;
+
+        this.props.history.push(`/restaurants?city_id=${cityId}` +
+        `&time=${this.state.time}` +
+        `&guests=${this.state.numPeople}` +
+        `&date=${this.state.date}` +
+        `&restaurant=${this.state.restaurant}`)
     }
 
     render(){
