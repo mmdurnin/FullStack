@@ -58,6 +58,13 @@ The ternary logic in the snippet to the right is as follows: the state is set to
 *Search form component (right)*
 
 ### <a id="reservations"></a>User-authenticated access to reservations ###
+
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_gifs/t.create_reservation.gif" width="60%" align="right" >  
+
+Reservations are created on the restaurants show page. On creating a new reservation, a handle submit function checks if there exists a current session id. If not, the open modal (type "log in") action is called to encourage the user to sign in. Model and database-level contstraints are in place to check that number of guests, time and reservation are not blank. On successfully submitting a new reservation, the user is redirected to their profile page which summarizes their upcoming reservations. This page renders all future reservations, in order from soonest to furthest in the future.
+
+From the reservations summary page, a user also has access to updating and/or deleting their reservations. Two separate reservation actions are referenced on the reservation form container (update/ delete), both of which require an AJAX call to their respective actions on the backend reservations controller.
+
 ### <a id="reviews"></a>Restaurant ratings and reviews ###
 ### <a id="profile"></a>User profile featuring reservations and reviews ###
 ### <a id="errors"></a>Custom error handling ###
