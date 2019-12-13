@@ -36,7 +36,7 @@ Welcome to TableFor2! TableFor2 is a web application inspired by OpenTable. This
 
 
 
-The app's restaurant searchbar sends two parameters to the backend: city ID (with a default value of 1: San Francisco) and restaurant name (optional).  
+The app's restaurant search bar sends two parameters to the backend: city ID (with a default value of 1: San Francisco) and restaurant name (optional).  
 
 <img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_search_actions2.png" width="100%" > *Restaurant action dispatches "fetch restaurants" with two parameters*    
 
@@ -61,11 +61,16 @@ The ternary logic in the snippet to the right is as follows: the state is set to
 
 <img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_gifs/t.create_reservation.gif" width="60%" align="right" >  
 
-Reservations are created on the restaurants show page. On creating a new reservation, a handle submit function checks if there exists a current session id. If not, the open modal (type "log in") action is called to encourage the user to sign in. Model and database-level contstraints are in place to check that number of guests, time and reservation are not blank. On successfully submitting a new reservation, the user is redirected to their profile page which summarizes their upcoming reservations. This page renders all future reservations, in order from soonest to furthest in the future.
+Reservations are created on the restaurant show page. On creating a new reservation, a handle submit function checks if there exists a current session id. If not, the open modal (type "log in") action is called to encourage the user to sign in. Model and database-level contstraints are in place to check that number of guests, time and reservation are not blank. On successfully submitting a new reservation, the user is redirected to their profile page which summarizes their upcoming reservations. This page renders all future reservations, in order from soonest to furthest in the future.
 
 From the reservations summary page, a user also has access to updating and/or deleting their reservations. Two separate reservation actions are referenced on the reservation form container (update/ delete), both of which require an AJAX call to their respective actions on the backend reservations controller.
 
 ### <a id="reviews"></a>Restaurant ratings and reviews ###
+
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_gifs/create_review.gif" width="60%" align="left" >
+
+Also on the restaurant show page is a list of all reviews. The fetch reviews frontend action is triggered on mount of the component. The route to the reviews index action on the backend is nested under restaurants. As such, the AJAX call to fetch restaurants includes restaurant ID in the query string -- url: `/api/restaurants/${restaurantId}/reviews`, and the index action on the reviews controller filters reviews by restaurant ID. Each item on the list of restaurant reviews includes the name of the user who created the review. To limit the number of N + 1 queries to the database, the call to grab this batch of reviews "includes" user, which preloads associated user records.
+
 ### <a id="profile"></a>User profile featuring reservations and reviews ###
 ### <a id="errors"></a>Custom error handling ###
 ### <a id="responsive"></a>Responsive design ###
@@ -81,6 +86,7 @@ This project was built using the following technologies:
 
 ## <a id="Installation"></a>Installation ##
 
+You'll need postgresSQL AND a bunch of restaurant images to get things going.
 
 ## <a id="Seed-Sources"></a>Seed Data Sources & Credits ##
 Fonts
