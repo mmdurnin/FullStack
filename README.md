@@ -51,9 +51,11 @@ The index action includes an active record query for a matching city ID and any 
 
 <img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_frontend_query.png" width="60%" align="right" >    
 
-The other search parameters are carried over directly to the restaurants index page. This is achieved by tacking a query string onto a route (/restaurants), defined on the App component.  A future implementation will include real reservation search.  
+The other search parameters are carried over directly to the restaurants index page. This is achieved by tacking a query string onto a route (/restaurants), defined on the master component. A future implementation will include real reservation search. 
 
-*Search form component*
+The ternary logic in the snippet to the right is as follows: the state is set to an empty string when the component mounts. If it is still an empty string on submit, assign state ID to 1, otherwise assign state ID to the state that has been selected by the user.
+
+*Search form component (right)*
 
 ### <a id="reservations"></a>User-authenticated access to reservations ###
 ### <a id="reviews"></a>Restaurant ratings and reviews ###
