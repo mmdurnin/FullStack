@@ -74,6 +74,27 @@ Also on the restaurant show page is a list of all reviews. The fetch reviews fro
 The create review form exists on this same restaurant show page. If a user is not logged in on submitting the review form, the log in modal will open, preventing the user from submitting. Creating a new review triggers a state change, rerendering the list of reviews directly above the form which will then include the submitted review.
 
 ### <a id="profile"></a>User profile featuring reservations and reviews ###
+
+Logged in users have access to their upcoming reservations and the restaurant reviews that they have submitted via their user profile. This is accessed by a static button that shows the name of the user in the upper righthand corner of the app.
+
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_profile_1.png" width="60%" align="right" >
+
+The user profile contains two tabs which are rendered based on click logic: add class ("active") to the "clicked" tab and remove the active class from the previous tab. This serves to change the styling of the active tab itself. The onclick function also changes the profile component's local state "tab". On click of reservations sets "tab" to 0; on click of reviews sets "tab" to 1. Further down, an array of two components is defined. In the render function a div holds a reference to the array at the index number defined by state.
+
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_profile_2.png" width="100%" >
+
+The User Reservations tab triggers the fetch reservations action. On the reservations controller, costs are reduced again by using the ".includes(:restaurant)". This is necessary because each reservation item requires additional information on the restaurant. The bulk of the logic for sorting reservations in descending order, filtering out past reservations, grabbing reservations based on current user is done on the index action of the reservations controller with this single active record query:
+
+@reservations = current_user.reservations
+            .includes(:restaurant)
+            .where('starts_at > ?', DateTime.now)
+            .order(id: :desc)
+            
+A future implementation will render both upcoming and past reservations, sorted into separate categories with an option for the user to leave a review on the restaurants in which they have previously "dined".
+
+
+
+
 ### <a id="errors"></a>Custom error handling ###
 ### <a id="responsive"></a>Responsive design ###
 
