@@ -101,11 +101,15 @@ The user reviews tab triggers an AJAX call to a custom Rails route ("user_review
 
 Standard database constraints and model-level validations are in place to ensure that all required fields are provided. In addition to these constraints and validations (null: false / presence: true), custom errors are included on the reservation model. 
 
-Because of these additional validations, users are prevented from creating a second reservation for the same date/ time. Users are also prevented from creating a reservation in the past. However, this can also be achieved by setting a minimum on the date input of the date today. This second method of ensuring a future reservation date is used on the project's "update reservation" form on the user profile. Creating a custom error for this was challenging as it required multiple conversions of PSQL, Ruby, and Javascript date-time objects and strings, but ultimately was more rewarding because it allows for flexibility in styling and content of the error message.
+Because of these additional validations, users are prevented from creating a second reservation for the same date/ time. Users are also prevented from creating a reservation in the past. However, this can also be achieved by setting a minimum on the date input of the date today. This second method of ensuring a future reservation date is used on the project's "update reservation" form on the user profile. Creating a custom error for this was more challenging as it required multiple conversions of PSQL, Ruby, and Javascript date-time objects and strings, but ultimately was more rewarding because it allows for flexibility in styling and content of the error message.
 
-<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_custom_validations_errors.png" width="100%" align="left" >
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_custom_validations_errors.png" width="100%" align="left" >  
 
 ### <a id="responsive"></a>Responsive design ###
+
+This app maintains a visually appealling experience on all devices and among all window resizes. This is achieved through media queries, flexbox, overflow properties, and setting minimum and maximum widths. For instance, when the window is pushed into a width of 1000px or less, the reservation form on the restaurant show page disappears from the right side bar and is recreated at the bottom of the page. 
+
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_gifs/resize.gif" width="100%" align="left" >  
 
 ## <a id="Technologies"></a>Technologies ##
 
@@ -118,17 +122,46 @@ This project was built using the following technologies:
 
 ## <a id="Installation"></a>Installation ##
 
-You'll need postgresSQL AND a bunch of restaurant images to get things going.
+From the command line:
+* bundle install
+* npm install
+* bundle exec rails db:create
+* bundle exec rails db:seed
 
-## <a id="Seed-Sources"></a>Seed Data Sources & Credits ##
-Fonts
-Icons
-Images
+(To launch the app from local server: )
+* rails server
+* npm start
+
+*Please note that the images for this project are stored on a private AWS account. Those interested in cloning the app will need to collect their own seed images.*
+
+## <a id="Seed-Sources"></a>Seed Data Sources & Credits ##  
+
+**Fonts**  
+[Google Fonts](https://fonts.google.com/)  
+
+**Icons** 
+[Font Awesome](https://fontawesome.com/)  
+
+**Images**  
+[Pexels](https://www.pexels.com/search/restaurants/)  
+[Unsplash](https://unsplash.com/s/photos/restaurant)  
+
+**Restaurant Summaries**  
+[Yelp, Indianapolis](https://www.yelp.com/search?find_desc=Restaurants&find_loc=Indianapolis%2C+IN)  
+
+**Restaurant Names**
+[Japanese restaurant Names, Savor Japan](https://savorjapan.com/)  
+Some of the French restaurants are real restaurants in Paris (e.g., Chez Gladines)  
+(Most are made up)
+
+**Restaurant Phone Numbers**  
+P-O-P-C-O-R-N (sf)  
+McDonalds, San Francisco  
+Call and Oates number  
+[Fake phone number generator](https://fakenumber.org/)  
+
+**Restaurant Addresses**  
+[Fake address generator](https://www.fakeaddressgenerator.com/usa_address_generator)
 
 
-## <a id="Future-Directions"></a>Future Directions ##
-Edit & delete reviews
-Restaurant filters by cuisine, neighborhood, and price
-Save restaurants 
-Create new restaurant ("for restauranteurs")
-Real reservation search (updates to seeds with reservation slots)
+Real San Francisco restaurant info was collected from [Yelp, San Francisco](https://www.yelp.com/search?find_desc=Restaurants&find_loc=San+Francisco%2C+CA)
