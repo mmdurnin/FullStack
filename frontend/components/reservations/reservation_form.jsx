@@ -24,7 +24,6 @@ class ReservationForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let dateTime = `${this.state.date}` + ` ` + `${this.state.time}`
-        console.log(dateTime)
 
         if (this.props.loggedIn) {
             this.props.action({

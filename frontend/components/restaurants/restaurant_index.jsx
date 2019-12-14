@@ -41,7 +41,6 @@ class RestaurantIndex extends React.Component{
            event.target.value = false
            this.setState({cuisine: tempArr})
        }
-       console.log(this.state)
     }
 
     render(){

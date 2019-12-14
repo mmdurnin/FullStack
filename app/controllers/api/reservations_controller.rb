@@ -58,11 +58,8 @@ class Api::ReservationsController < ApplicationController
         @reservation.starts_at = reservation_params[:starts_at].to_datetime
 
         if @reservation.update_attributes(reservation_params)
-            "we found the bug"
             render :show
         else
-            p "reservation.errors.full messages"
-            p "#{@reservation.errors.full_messages}"
             render json: @reservation.errors.full_messages, status: 418
         end
     end

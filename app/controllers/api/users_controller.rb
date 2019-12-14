@@ -11,7 +11,6 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        # :require_login
         @user = current_user.includes(:reservations)
         render :show
     end

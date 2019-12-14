@@ -55,7 +55,7 @@ const Footer = () => (
                     <i className="footer-icon fab fa-github"></i>
                     <h3>GitHub</h3>
                     </a>
-                <a href="maureendurnin.com" >
+                <a href="http://maureendurnin.com" >
                     <i className="footer-icon fas fa-user-circle"></i>
                     <h3>Developer Portfolio</h3>
                 </a>
