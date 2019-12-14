@@ -97,11 +97,11 @@ The user reviews tab triggers an AJAX call to a custom Rails route ("user_review
 
 ### <a id="errors"></a>Custom error handling ###
 
-<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshots/custom_errrors_1.png" width="60%" align="right" >
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshots/custom_errrors_1.png" width="40%" align="right" >
 
 Standard database constraints and model-level validations are in place to ensure that all required fields are provided. In addition to these constraints and validations (null: false / presence: true), custom errors are included on the reservation model. 
 
-Because of these additional validations, users are prevented from creating a second reservation for the same date/ time. Users are also prevented from creating a reservation in the past. However, this can also be achieved by setting a minimum on the date input with new Date() (which will provide the date today). This second method to ensure a future reservation date is used on the "update reservation" form.
+Because of these additional validations, users are prevented from creating a second reservation for the same date/ time. Users are also prevented from creating a reservation in the past. However, this can also be achieved by setting a minimum on the date input of the date today. This second method of ensuring a future reservation date is used on the project's "update reservation" form on the user profile. Creating a custom error for this was challenging as it required multiple conversions of PSQL, Ruby, and Javascript date-time objects and strings, but ultimately was more rewarding because it allows for flexibility in styling and content of the error message.
 
 <img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_custom_validations_errors.png" width="100%" align="left" >
 
