@@ -135,31 +135,31 @@ From the command line:
 
 ## <a id="Seed-Sources"></a>Seed Data Sources & Credits ##  
 
-**Fonts**  
+* Fonts   
 [Google Fonts](https://fonts.google.com/)  
 
-**Icons** 
+* Icons   
 [Font Awesome](https://fontawesome.com/)  
 
-**Images**  
+* Images    
 [Pexels](https://www.pexels.com/search/restaurants/)  
 [Unsplash](https://unsplash.com/s/photos/restaurant)  
 
-**Restaurant Summaries**  
+* Restaurant Summaries    
 [Yelp, Indianapolis](https://www.yelp.com/search?find_desc=Restaurants&find_loc=Indianapolis%2C+IN)  
 
-**Restaurant Names**
+* Restaurant Names  
 [Japanese restaurant Names, Savor Japan](https://savorjapan.com/)  
 Some of the French restaurants are real restaurants in Paris (e.g., Chez Gladines)  
 (Most are made up)
 
-**Restaurant Phone Numbers**  
+* Restaurant Phone Numbers    
 P-O-P-C-O-R-N (sf)  
 McDonalds, San Francisco  
 Call and Oates number  
 [Fake phone number generator](https://fakenumber.org/)  
 
-**Restaurant Addresses**  
+* Restaurant Addresses    
 [Fake address generator](https://www.fakeaddressgenerator.com/usa_address_generator)
 
 
