@@ -45,7 +45,7 @@ The app's restaurant search bar sends two parameters to the backend: city ID (wi
 
 <img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_search_util.png" width="100%" > *API call to the restaurants controller, parameters included in query string*    
 
-The index action includes an active record query for a matching city ID and any restaurant with a name that contains the search term, allowing for partial, case-insensitive search.
+The index action includes an active record query for a matching city ID and any restaurant with a name that contains the search term, allowing for partial, case-insensitive search. The active record query is sanitized to protect against potential malicious user activity (e.g., SQL injection attacks).
 
 <img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_search_controller_sanitized.png" width="100%" > *Index action on the restaurants controller*    
 
@@ -92,10 +92,19 @@ The User Reservations tab triggers the fetch reservations action. On the reserva
             
 A future implementation will render both upcoming and past reservations, sorted into separate categories with an option for the user to leave a review on the restaurants in which they have previously "dined".
 
-User reviews require a custom Rails route
+The user reviews tab triggers an AJAX call to a custom Rails route ("user_reviews"). This is similar to the reviews index action but instead of filtering by restaurant ID, reviews are filtered by current user.
 
 
 ### <a id="errors"></a>Custom error handling ###
+
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshots/custom_errrors_1.png" width="60%" align="right" >
+
+Standard database constraints and model-level validations are in place to ensure that all required fields are provided. In addition to these constraints and validations (null: false / presence: true), custom errors are included on the reservation model. 
+
+Because of these additional validations, users are prevented from creating a second reservation for the same date/ time. Users are also prevented from creating a reservation in the past. However, this can also be achieved by setting a minimum on the date input with new Date() (which will provide the date today). This second method to ensure a future reservation date is used on the "update reservation" form.
+
+<img src="https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/screenshot_snippets/t.snippet_custom_validations_errors.png" width="100%" align="left" >
+
 ### <a id="responsive"></a>Responsive design ###
 
 ## <a id="Technologies"></a>Technologies ##
