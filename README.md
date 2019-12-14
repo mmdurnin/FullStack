@@ -4,7 +4,6 @@
 Welcome to TableFor2! TableFor2 is a web application inspired by OpenTable. This online platform features restaurants in several major US cities. With this app users can browse, search, review and reserve restaurants. See below for some of the exciting highlights of this project.
 
 ![Screenshot](https://github.com/mmdurnin/TableFor2/blob/master/app/assets/images/restaurant_show.png)
-[Visit TableFor2](http://tablefor2.herokuapp.com/#/)
 
 
 
@@ -23,7 +22,7 @@ Welcome to TableFor2! TableFor2 is a web application inspired by OpenTable. This
 * [Technologies](#Technologies)
 * [Installation](#Installation)
 * [Credits](#Seed-Sources)
-* [Future Directions](#Future-Directions)
+* [Links](#Links)
 
 
 ## <a id="Features-&-Highlights"></a>Features & Highlights ##
@@ -165,3 +164,7 @@ Call and Oates number
 
 
 Real San Francisco restaurant info was collected from [Yelp, San Francisco](https://www.yelp.com/search?find_desc=Restaurants&find_loc=San+Francisco%2C+CA)
+
+
+## <a id="Links"></a>Links ##  
+[Visit TableFor2](http://tablefor2.herokuapp.com/#/)
