@@ -46,7 +46,6 @@ export const createReservation = (reservation) => dispatch => {
     return ReservationAPIUtil.createReservation(reservation)
         .then((reservation) => dispatch(receiveReservation(reservation)),
         (errors) => {
-            console.log(errors)
             return dispatch(receiveErrors(errors.responseJSON))
         }
     )
