@@ -31,31 +31,31 @@ const Footer = () => (
                 <li>CSS</li>
             </ul>
             </div>
-            <h3><a href="https://github.com/mmdurnin/TableFor2">About the code</a></h3>
+            <h3><a href="https://github.com/mmdurnin/TableFor2" target="_blank">About the code</a></h3>
         </div>
 
         <div className="footer-3 column">
             <h1>TableFor2</h1>
             <div id="footer-section">
-                <p>TableFor2 is inspired by <a href="https://www.opentable.com/">OpenTable</a>. </p>
+                <p>TableFor2 is inspired by <a href="https://www.opentable.com/" target="_blank">OpenTable</a>. </p>
                 <div className="row">
 
                 </div>
             </div>
             <div className="footer-icons column">
-                <a href="https://angel.co/maureen-durnin?public_profile=1">
+                <a href="https://angel.co/maureen-durnin?public_profile=1" target="_blank">
                     <i className="footer-icon-circle fab fa-angellist"></i>
                     <h3>AngelList</h3>
                 </a>
-                <a href="https://www.linkedin.com/in/maureen-durnin-19b73a198/">
+                <a href="https://www.linkedin.com/in/maureen-durnin-19b73a198/" target="_blank">
                     <i className="footer-icon-circle fab fa-linkedin-in"></i>
                     <h3>LinkedIn</h3>
                 </a>
-                <a href="https://github.com/mmdurnin">
+                <a href="https://github.com/mmdurnin" target="_blank">
                     <i className="footer-icon fab fa-github"></i>
                     <h3>GitHub</h3>
                     </a>
-                <a href="http://maureendurnin.com" >
+                <a href="http://maureendurnin.com" target="_blank">
                     <i className="footer-icon fas fa-user-circle"></i>
                     <h3>Developer Portfolio</h3>
                 </a>
