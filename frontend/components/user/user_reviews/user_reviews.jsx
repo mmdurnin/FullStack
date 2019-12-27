@@ -15,7 +15,7 @@ class UserReviews extends React.Component {
         if (this.props.reviews === undefined) return null;
 
     return(
-        <div>
+        <div className="profile-sub-container-grandparent">
             <ul className="profile-sub-container-parent">
                 {
                     this.props.reviews.map((el, i) => {
