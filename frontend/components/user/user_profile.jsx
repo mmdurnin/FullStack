@@ -35,7 +35,7 @@ class UserProfile extends React.Component{
                         <button onClick={(e) => this.selectTab(e, 1)} >REVIEWS</button>
                     </div>
                 </div>
-                <div>{currentPageArr[this.state.tab]}</div>
+                <div className="profile-page-holder">{currentPageArr[this.state.tab]}</div>
             </div>
         )
     }
