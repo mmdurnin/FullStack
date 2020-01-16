@@ -11,14 +11,14 @@ class UserReviews extends React.Component {
     }
 
     render () {
-
         if (this.props.reviews === undefined) return null;
+        const orderedReviews = this.props.reviews.reverse()
 
     return(
         <div className="profile-sub-container-grandparent">
             <ul className="profile-sub-container-parent">
                 {
-                    this.props.reviews.map((el, i) => {
+                    orderedReviews.map((el, i) => {
                         return <li key={i} className="profile-sub-container">
                             <img src={el.restaurant_image} alt="" />
                             <div className="profile-tabitem-info">
